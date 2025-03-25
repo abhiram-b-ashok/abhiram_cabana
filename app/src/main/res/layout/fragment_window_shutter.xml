@@ -156,7 +156,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="15dp"
                 android:layout_marginStart="10dp"
                 android:text="YES"
                 android:textColor="@color/white"
@@ -203,7 +203,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="15dp"
                 android:text="NO"
                 android:id="@+id/noLabel"
                 android:textColor="@color/white"

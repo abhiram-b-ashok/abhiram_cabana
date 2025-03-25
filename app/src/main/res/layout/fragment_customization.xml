@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:background="@color/black"
-        android:paddingHorizontal="30dp"
+        android:paddingHorizontal="25dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -48,7 +48,7 @@
             android:fontFamily="sans-serif-medium"
             android:text="NAME OF CUSTOMIZATION"
             android:textColor="@color/white"
-            android:textSize="22sp"
+            android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/cabanSizeHeader" />
@@ -60,7 +60,7 @@
             android:fontFamily="sans-serif-medium"
             android:text="Step 13/13"
             android:textColor="#78BFA0"
-            android:textSize="20sp"
+            android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/cabanaSizeLabel"
@@ -102,7 +102,7 @@
             android:fontFamily="sans-serif-medium"
             android:text="NAME OF CUSTOMIZATION"
             android:textColor="@color/white"
-            android:textSize="20sp"
+            android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"/>
         <EditText
@@ -113,7 +113,7 @@
             android:background="@drawable/curve_for_corners"
             android:hint="Add Name"
             android:textColorHint="@color/white"
-            android:textSize="18sp"
+            android:textSize="15sp"
             android:layout_marginTop="10dp"
             android:textColor="@color/white"
             android:padding="10dp"
@@ -127,7 +127,7 @@
             android:fontFamily="sans-serif-medium"
             android:text="ENTER LOCATION"
             android:textColor="@color/white"
-            android:textSize="20sp"
+            android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/nameEditText"/>
         <TextView
