@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/chooseTypeFragment">
+
+    <fragment
+        android:id="@+id/chooseTypeFragment"
+        android:name="com.example.cabana.ChooseTypeFragment"
+        android:label="fragment_choose_type"
+        tools:layout="@layout/fragment_choose_type" >
+        <action
+            android:id="@+id/action_chooseTypeFragment_to_cabanaSizeFragment"
+            app:destination="@id/cabanaSizeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/cabanaSizeFragment"
+        android:name="com.example.cabana.CabanaSizeFragment"
+        android:label="fragment_cabana_size"
+        tools:layout="@layout/fragment_cabana_size" >
+        <action
+            android:id="@+id/action_cabanaSizeFragment_to_bathroomSizeFragment"
+            app:destination="@id/bathroomSizeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/bathroomSizeFragment"
+        android:name="com.example.cabana.BathroomSizeFragment"
+        android:label="fragment_bathroom_size"
+        tools:layout="@layout/fragment_bathroom_size" >
+        <action
+            android:id="@+id/action_bathroomSizeFragment_to_roomFloorFragment"
+            app:destination="@id/roomFloorFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/roomFloorFragment"
+        android:name="com.example.cabana.RoomFloorFragment"
+        android:label="fragment_room_floor"
+        tools:layout="@layout/fragment_room_floor" >
+        <action
+            android:id="@+id/action_roomFloorFragment_to_wardrobeFragment"
+            app:destination="@id/wardrobeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/wardrobeFragment"
+        android:name="com.example.cabana.WardrobeFragment"
+        android:label="fragment_wardrobe"
+        tools:layout="@layout/fragment_wardrobe" >
+        <action
+            android:id="@+id/action_wardrobeFragment_to_theWallFragment"
+            app:destination="@id/theWallFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/theWallFragment"
+        android:name="com.example.cabana.TheWallFragment"
+        android:label="fragment_the_wall"
+        tools:layout="@layout/fragment_the_wall" >
+        <action
+            android:id="@+id/action_theWallFragment_to_windowSizeFragment"
+            app:destination="@id/windowSizeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/windowSizeFragment"
+        android:name="com.example.cabana.WindowSizeFragment"
+        android:label="fragment_window_size"
+        tools:layout="@layout/fragment_window_size" >
+        <action
+            android:id="@+id/action_windowSizeFragment_to_windowShutterFragment"
+            app:destination="@id/windowShutterFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/windowShutterFragment"
+        android:name="com.example.cabana.WindowShutterFragment"
+        android:label="fragment_window_shutter"
+        tools:layout="@layout/fragment_window_shutter" >
+        <action
+            android:id="@+id/action_windowShutterFragment_to_liftersFragment"
+            app:destination="@id/liftersFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/liftersFragment"
+        android:name="com.example.cabana.LiftersFragment"
+        android:label="fragment_lifters"
+        tools:layout="@layout/fragment_lifters" >
+        <action
+            android:id="@+id/action_liftersFragment_to_bathroomTypeFragment"
+            app:destination="@id/bathroomTypeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/bathroomTypeFragment"
+        android:name="com.example.cabana.BathroomTypeFragment"
+        android:label="fragment_bathroom_type"
+        tools:layout="@layout/fragment_bathroom_type" >
+        <action
+            android:id="@+id/action_bathroomTypeFragment_to_conditionFragment"
+            app:destination="@id/conditionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/conditionFragment"
+        android:name="com.example.cabana.ConditionFragment"
+        android:label="fragment_condition"
+        tools:layout="@layout/fragment_condition" >
+        <action
+            android:id="@+id/action_conditionFragment_to_outerCoverFragment"
+            app:destination="@id/outerCoverFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/outerCoverFragment"
+        android:name="com.example.cabana.OuterCoverFragment"
+        android:label="fragment_outer_cover"
+        tools:layout="@layout/fragment_outer_cover" >
+        <action
+            android:id="@+id/action_outerCoverFragment_to_waterTankFragment"
+            app:destination="@id/waterTankFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/waterTankFragment"
+        android:name="com.example.cabana.WaterTankFragment"
+        android:label="fragment_water_tank"
+        tools:layout="@layout/fragment_water_tank" >
+        <action
+            android:id="@+id/action_waterTankFragment_to_towHookFragment"
+            app:destination="@id/towHookFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/towHookFragment"
+        android:name="com.example.cabana.TowHookFragment"
+        android:label="fragment_tow_hook"
+        tools:layout="@layout/fragment_tow_hook" >
+        <action
+            android:id="@+id/action_towHookFragment_to_customizationFragment"
+            app:destination="@id/customizationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/customizationFragment"
+        android:name="com.example.cabana.CustomizationFragment"
+        android:label="fragment_customization"
+        tools:layout="@layout/fragment_customization" >
+        <action
+            android:id="@+id/action_customizationFragment_to_submitSuccessFragment"
+            app:destination="@id/submitSuccessFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/submitSuccessFragment"
+        android:name="com.example.cabana.SubmitSuccessFragment"
+        android:label="fragment_submit_success"
+        tools:layout="@layout/fragment_submit_success" />
+</navigation>
