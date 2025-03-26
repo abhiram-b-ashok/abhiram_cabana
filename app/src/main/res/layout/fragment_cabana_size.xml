@@ -152,16 +152,28 @@
                 android:textColor="#78BFA0" />
 
             <EditText
+                android:id="@+id/lengthContent"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@null"
                 android:hint="0.0"
+                android:inputType="number"
                 android:textColor="@color/white"
                 android:textColorHint="@color/white"
                 android:textSize="15sp" />
 
 
         </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvErrorLength"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Please type the Length"
+            android:textColor="@color/red"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="@id/sizeLengthLayout"
+            app:layout_constraintTop_toBottomOf="@id/sizeLengthLayout" />
 
         <LinearLayout
             android:id="@+id/sizeWidthLayout"
@@ -173,7 +185,7 @@
             android:orientation="vertical"
             android:padding="10dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/sizeLengthLayout">
+            app:layout_constraintTop_toBottomOf="@id/tvErrorLength">
 
             <TextView
                 android:layout_width="match_parent"
@@ -182,16 +194,27 @@
                 android:textColor="#78BFA0" />
 
             <EditText
+                android:id="@+id/widthContent"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@null"
                 android:hint="0.0"
+                android:inputType="number"
                 android:textColor="@color/white"
-                android:textSize="15sp"
-                android:textColorHint="@color/white" />
+                android:textColorHint="@color/white"
+                android:textSize="15sp" />
 
 
         </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@id/sizeWidthLayout"
+            app:layout_constraintTop_toBottomOf="@id/sizeWidthLayout"
+            android:textColor="@color/red"
+            android:visibility="gone"
+            android:text="Please Enter the width"
+            android:id="@+id/tvErrorWidth"/>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -215,6 +238,7 @@
             app:layout_constraintEnd_toStartOf="@id/nextButton"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
 
         <ImageView
             android:id="@+id/nextButton"

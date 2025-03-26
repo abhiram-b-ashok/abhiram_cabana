@@ -132,9 +132,9 @@
             app:layout_constraintTop_toBottomOf="@id/roomFloorLabel" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/parquetLayout"
+            android:id="@+id/slidingLayout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:layout_marginHorizontal="30dp"
             android:layout_marginTop="30dp"
             android:background="@drawable/curve_for_corners"
@@ -144,14 +144,16 @@
 
             <ImageView
                 android:id="@+id/slidingdoorimg"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_marginStart="3dp"
                 android:src="@drawable/slidingdoorimg"
                 app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/standardLabel"
+                android:id="@+id/slidingLabel"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginStart="10dp"
@@ -165,7 +167,7 @@
 
 
             <ImageView
-                android:id="@+id/standardSizeRadio"
+                android:id="@+id/slidingRadio"
                 android:layout_width="28dp"
                 android:layout_height="28dp"
                 android:src="@drawable/checkboxstyle"
@@ -177,26 +179,28 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/carpetLayout"
+            android:id="@+id/hingeLayout"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="50dp"
             android:layout_marginHorizontal="30dp"
             android:layout_marginTop="8dp"
             android:background="@drawable/curve_for_corners"
             android:paddingEnd="8dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/parquetLayout">
+            app:layout_constraintTop_toBottomOf="@id/slidingLayout">
 
             <ImageView
                 android:id="@+id/hingedoorimg"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
                 android:src="@drawable/hindedoorimg"
+                android:layout_marginStart="3dp"
                 app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/mediumLabel"
+                android:id="@+id/hingeLabel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
@@ -209,7 +213,7 @@
                 android:text="HINGE DOOR" />
 
             <ImageView
-                android:id="@+id/mediumRadio"
+                android:id="@+id/hingeRadio"
                 android:layout_width="28dp"
                 android:layout_height="28dp"
                 android:src="@drawable/checkboxstyle"
@@ -223,20 +227,22 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/cornerWardrobeLayout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:layout_marginHorizontal="30dp"
             android:layout_marginTop="8dp"
             android:background="@drawable/curve_for_corners"
             android:paddingEnd="8dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/carpetLayout">
+            app:layout_constraintTop_toBottomOf="@id/hingeLayout">
 
             <ImageView
                 android:id="@+id/cornerwardrobeimg"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_marginStart="3dp"
                 android:src="@drawable/cornerwardrobeimg"
                 app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
@@ -268,7 +274,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/walkinWardrobeLayout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:layout_marginHorizontal="30dp"
             android:layout_marginTop="8dp"
             android:background="@drawable/curve_for_corners"
@@ -278,10 +284,12 @@
 
             <ImageView
                 android:id="@+id/walkinwardrobe"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_marginStart="3dp"
                 android:src="@drawable/walkinwardrobeimg"
                 app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView

@@ -1,5 +1,3 @@
-
-
 package com.example.cabana
 
 import android.os.Bundle
@@ -18,7 +16,7 @@ class OuterCoverFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-       binding= FragmentOuterCoverBinding.inflate(inflater,container,false)
+        binding = FragmentOuterCoverBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -32,8 +30,26 @@ class OuterCoverFragment : Fragment() {
         {
             findNavController().navigateUp()
         }
+        binding.ironLayout.setOnClickListener()
+        {
+            selectCover(1)
+        }
+        binding.fiperLayout.setOnClickListener()
+        {
+            selectCover(2)
+        }
 
 
+    }
+
+    private fun selectCover(type: Int) {
+        binding.apply {
+            ironLayout.setBackgroundResource(if (type == 1) R.drawable.size_card_layout_background else R.drawable.curve_for_corners)
+            ironRadio.setImageResource(if (type == 1) R.drawable.baseline_check_circle_24 else R.drawable.checkboxstyle)
+            fiperLayout.setBackgroundResource(if (type == 2) R.drawable.size_card_layout_background else R.drawable.curve_for_corners)
+            fiperRadio.setImageResource(if (type == 2) R.drawable.baseline_check_circle_24 else R.drawable.checkboxstyle)
+
+        }
     }
 
 

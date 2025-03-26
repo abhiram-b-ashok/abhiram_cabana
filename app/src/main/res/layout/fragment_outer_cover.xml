@@ -155,7 +155,7 @@
 
 
             <ImageView
-                android:id="@+id/standardSizeRadio"
+                android:id="@+id/ironRadio"
                 android:layout_width="28dp"
                 android:layout_height="28dp"
                 android:src="@drawable/checkboxstyle"
@@ -192,7 +192,7 @@
 
 
             <ImageView
-                android:id="@+id/mediumRadio"
+                android:id="@+id/fiperRadio"
                 android:layout_width="28dp"
                 android:layout_height="28dp"
                 android:src="@drawable/checkboxstyle"

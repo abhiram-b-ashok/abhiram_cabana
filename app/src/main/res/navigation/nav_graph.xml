@@ -14,6 +14,7 @@
             android:id="@+id/action_chooseTypeFragment_to_cabanaSizeFragment"
             app:destination="@id/cabanaSizeFragment" />
     </fragment>
+
     <fragment
         android:id="@+id/cabanaSizeFragment"
         android:name="com.example.cabana.CabanaSizeFragment"
@@ -22,6 +23,7 @@
         <action
             android:id="@+id/action_cabanaSizeFragment_to_bathroomSizeFragment"
             app:destination="@id/bathroomSizeFragment" />
+
     </fragment>
     <fragment
         android:id="@+id/bathroomSizeFragment"

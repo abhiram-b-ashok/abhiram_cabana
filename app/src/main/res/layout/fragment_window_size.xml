@@ -210,7 +210,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/mediumLabel" />
 
             <ImageView
-                android:id="@+id/mediumRadio"
+                android:id="@+id/mediumSizeRadio"
                 android:layout_width="28dp"
                 android:layout_height="28dp"
                 android:src="@drawable/checkboxstyle"
@@ -250,14 +250,13 @@
                 app:layout_constraintTop_toBottomOf="@+id/largeLabel" />
 
             <ImageView
-                android:id="@+id/largeRadio"
+                android:id="@+id/largeSizeRadio"
                 android:layout_width="28dp"
                 android:layout_height="28dp"
                 android:src="@drawable/checkboxstyle"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-
                 />
 
         </androidx.constraintlayout.widget.ConstraintLayout>

@@ -102,7 +102,10 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="#181D23">
+                android:background="#181D23"
+                android:id="@+id/standardLayout"
+                >
+
 
                 <ImageView
                     android:id="@+id/standardRadio"
@@ -163,7 +166,8 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="#181D23">
+                android:background="#181D23"
+                android:id="@+id/customLayout">
 
                 <ImageView
                     android:id="@+id/customRadio"

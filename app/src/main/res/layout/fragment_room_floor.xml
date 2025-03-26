@@ -157,7 +157,7 @@
 
 
             <ImageView
-                android:id="@+id/standardSizeRadio"
+                android:id="@+id/parquetRadio"
                 android:layout_width="28dp"
                 android:layout_height="28dp"
                 android:src="@drawable/checkboxstyle"
@@ -194,7 +194,7 @@
 
 
             <ImageView
-                android:id="@+id/mediumRadio"
+                android:id="@+id/carpetRadio"
                 android:layout_width="28dp"
                 android:layout_height="28dp"
                 android:src="@drawable/checkboxstyle"
@@ -230,7 +230,7 @@
                 android:drawableStart="@drawable/tile"/>
 
             <ImageView
-                android:id="@+id/largeRadio"
+                android:id="@+id/tileRadio"
                 android:layout_width="28dp"
                 android:layout_height="28dp"
                 android:src="@drawable/checkboxstyle"
@@ -266,7 +266,7 @@
                 android:drawableStart="@drawable/nothingtile"/>
 
             <ImageView
-                android:id="@+id/tileRadio"
+                android:id="@+id/notileRadio"
                 android:layout_width="28dp"
                 android:layout_height="28dp"
                 android:src="@drawable/checkboxstyle"

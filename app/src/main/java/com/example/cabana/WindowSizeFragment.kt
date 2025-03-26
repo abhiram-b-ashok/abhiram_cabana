@@ -5,31 +5,63 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.collection.emptyLongSet
 import androidx.navigation.fragment.findNavController
 import com.example.cabana.databinding.FragmentWindowSizeBinding
 
 
 class WindowSizeFragment : Fragment() {
     private lateinit var binding: FragmentWindowSizeBinding
-
+    private var selectedSize: Int? = null
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentWindowSizeBinding.inflate(inflater,container,false)
+        binding = FragmentWindowSizeBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.nextPageButton.setOnClickListener(){
-            findNavController().navigate(R.id.action_windowSizeFragment_to_windowShutterFragment)
+        binding.nextPageButton.setOnClickListener() {
+            if (selectedSize != null) {
+                findNavController().navigate(R.id.action_windowSizeFragment_to_windowShutterFragment)
+            } else {
+                Toast.makeText(context, "Please select a model", Toast.LENGTH_SHORT).show()
+            }
         }
         binding.buildBackArrow.setOnClickListener()
         {
             findNavController().navigateUp()
         }
+        binding.standardSizeLayout.setOnClickListener()
+        {
+            selectWindowSize(1)
+            selectedSize = 1
+        }
+        binding.mediumSizeLayout.setOnClickListener()
+        {
+            selectWindowSize(2)
+            selectedSize = 2
+        }
+        binding.largeSizeLayout.setOnClickListener()
+        {
+            selectWindowSize(3)
+            selectedSize = 3
+        }
     }
 
+    private fun selectWindowSize(size: Int) {
+        binding.apply {
+            standardSizeLayout.setBackgroundResource(if (size == 1) R.drawable.size_card_layout_background else R.drawable.curve_for_corners)
+            standardSizeRadio.setImageResource(if (size == 1) R.drawable.baseline_check_circle_24 else R.drawable.checkboxstyle)
+            mediumSizeLayout.setBackgroundResource(if (size == 2) R.drawable.size_card_layout_background else R.drawable.curve_for_corners)
+            mediumSizeRadio.setImageResource(if (size == 2) R.drawable.baseline_check_circle_24 else R.drawable.checkboxstyle)
+            largeSizeLayout.setBackgroundResource(if (size == 3) R.drawable.size_card_layout_background else R.drawable.curve_for_corners)
+            largeSizeRadio.setImageResource(if (size == 4) R.drawable.baseline_check_circle_24 else R.drawable.checkboxstyle)
+
+        }
+    }
 
 }
