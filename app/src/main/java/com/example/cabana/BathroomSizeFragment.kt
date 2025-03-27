@@ -9,11 +9,13 @@ import android.widget.ImageView
 import android.widget.Toast
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.example.cabana.databinding.FragmentBathroomSizeBinding
 
 class BathroomSizeFragment : Fragment() {
     private lateinit var binding: FragmentBathroomSizeBinding
-   private var selectedSize:Int? =null
+   private var selectedSize:String? =null
+    private val args:BathroomSizeFragmentArgs by navArgs()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -27,7 +29,7 @@ class BathroomSizeFragment : Fragment() {
         binding.nextPageButton.setOnClickListener() {
             if (selectedSize!=null)
             {
-                findNavController().navigate(R.id.action_bathroomSizeFragment_to_roomFloorFragment)
+                findNavController().navigate(BathroomSizeFragmentDirections.actionBathroomSizeFragmentToRoomFloorFragment(args.chooseType,args.cabanSize, selectedSize.toString()))
             }
             else
             {
@@ -35,7 +37,6 @@ class BathroomSizeFragment : Fragment() {
                     standardSizeLayout.setBackgroundResource(R.drawable.validity_alert_frame)
                     mediumSizeLayout.setBackgroundResource(R.drawable.validity_alert_frame)
                     largeSizeLayout.setBackgroundResource(R.drawable.validity_alert_frame)
-
                 }
             }
         }
@@ -46,17 +47,17 @@ class BathroomSizeFragment : Fragment() {
         binding.standardSizeLayout.setOnClickListener()
         {
             selectedLayout(1)
-            selectedSize =1
+            selectedSize ="Standard"
         }
         binding.mediumSizeLayout.setOnClickListener()
         {
             selectedLayout(2)
-            selectedSize = 2
+            selectedSize = "Medium"
         }
         binding.largeSizeLayout.setOnClickListener()
         {
             selectedLayout(3)
-            selectedSize = 3
+            selectedSize = "Large"
         }
     }
 

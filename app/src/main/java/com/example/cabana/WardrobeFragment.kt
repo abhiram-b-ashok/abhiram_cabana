@@ -7,12 +7,14 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.example.cabana.databinding.FragmentWardrobeBinding
 
 
 class WardrobeFragment : Fragment() {
     private lateinit var binding: FragmentWardrobeBinding
-     private var selectedDoor:Int? =null
+     private var selectedDoor:String? =null
+    private val args:WardrobeFragmentArgs by navArgs()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -28,7 +30,7 @@ class WardrobeFragment : Fragment() {
         {
             if(selectedDoor!=null)
             {
-                findNavController().navigate(R.id.action_wardrobeFragment_to_theWallFragment)
+                findNavController().navigate(WardrobeFragmentDirections.actionWardrobeFragmentToTheWallFragment(args.chooseType,args.cabanSize,args.bathroomSize,args.floorType,selectedDoor.toString()))
             }
             else{
                 binding.apply {
@@ -47,22 +49,22 @@ class WardrobeFragment : Fragment() {
         binding.slidingLayout.setOnClickListener()
         {
             selectWardrobe(1)
-            selectedDoor = 1
+            selectedDoor = "Sliding Door"
         }
         binding.hingeLayout.setOnClickListener()
         {
             selectWardrobe(2)
-            selectedDoor = 2
+            selectedDoor = "Hinge Door"
         }
         binding.cornerWardrobeLayout.setOnClickListener()
         {
             selectWardrobe(3)
-            selectedDoor = 3
+            selectedDoor = "Corner Wardrobe"
         }
         binding.walkinWardrobeLayout.setOnClickListener()
         {
             selectWardrobe(4)
-            selectedDoor = 4
+            selectedDoor = "Walk in Wardrobe"
         }
     }
 

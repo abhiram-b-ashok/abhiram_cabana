@@ -1,231 +1,416 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".SubmitSuccessFragment"
-    android:background="#666565">
+    android:background="#666565"
+    tools:context=".SubmitSuccessFragment">
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/successLayout"
         android:layout_width="match_parent"
         android:layout_height="300dp"
+        android:layout_marginHorizontal="40dp"
+        android:layout_marginVertical="150dp"
         android:background="@drawable/curve_for_corners"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginHorizontal="40dp"
-        android:layout_marginVertical="150dp">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
         <ImageView
+            android:id="@+id/successIcon"
             android:layout_width="70dp"
             android:layout_height="70dp"
             android:layout_marginTop="20dp"
-            android:id="@+id/successIcon"
             android:src="@drawable/baseline_check_circle_24"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintTop_toTopOf="parent" />
+
         <TextView
+            android:id="@+id/successHead"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:text="RENTAL DONE SUCCESSFULLY"
             android:textColor="@color/white"
             android:textSize="18sp"
-            android:text="RENTAL DONE SUCCESSFULLY"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:gravity="center"
-            android:id="@+id/successHead"
-            android:layout_marginTop="20dp"
-            app:layout_constraintTop_toBottomOf="@+id/successIcon"/>
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/successIcon" />
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginTop="15dp"
             android:gravity="center"
             android:maxLines="3"
-            android:textColor="@color/white"
             android:text="Thank you. The lease has been successful. You can follow the order from the My Rentals  page"
-            app:layout_constraintStart_toStartOf="parent"
+            android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/successHead"
-            android:layout_marginTop="15dp"
-            android:layout_marginHorizontal="30dp"
-            />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/successHead" />
+
         <TextView
+            android:id="@+id/confirmButton"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:text="CONFIRM"
-            android:textSize="25sp"
-            android:padding="10dp"
-            android:id="@+id/confirmButton"
-            android:gravity="center"
-            android:textColor="@color/black"
+            android:layout_marginBottom="30dp"
             android:background="@drawable/view_cabana_button"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="CONFIRM"
+            android:textColor="@color/black"
+            android:textSize="25sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_marginBottom="30dp"/>
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
+
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/curve_for_corners"
         android:id="@+id/outputLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/curve_for_corners"
         android:visibility="gone"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="parent">
 
         <TextView
+            android:id="@+id/outputHead"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:text="FETCHED VALUES ARE"
             android:textColor="@color/white"
             android:textSize="18sp"
-            android:text="RENTAL DONE SUCCESSFULLY"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:gravity="center"
-            android:id="@+id/outputHead"
-            android:layout_marginTop="20dp"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <TextView
+            android:id="@+id/typeLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginTop="15dp"
             android:layout_marginHorizontal="10dp"
-            android:id="@+id/typeLabel"
+            android:layout_marginTop="15dp"
             android:text="Selected Type:"
             app:layout_constraintEnd_toStartOf="@+id/typeOutput"
-            app:layout_constraintTop_toBottomOf="@+id/outputHead"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintStart_toEndOf="@+id/typeLabel"
-            android:id="@+id/typeOutput"
-            android:layout_marginTop="15dp"
-            android:layout_marginHorizontal="10dp"
-            app:layout_constraintTop_toBottomOf="@+id/outputHead"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginTop="15dp"
+            app:layout_constraintTop_toBottomOf="@+id/outputHead" />
+
+        <TextView
+            android:id="@+id/typeOutput"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="15dp"
+            app:layout_constraintStart_toEndOf="@+id/typeLabel"
+            app:layout_constraintTop_toBottomOf="@+id/outputHead" />
+
+        <TextView
             android:id="@+id/cabanaSizeLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="15dp"
             android:text="Cabana Size:"
             app:layout_constraintEnd_toStartOf="@+id/cabanaSizeOutput"
-            app:layout_constraintTop_toBottomOf="@+id/typeOutput"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintStart_toEndOf="@+id/cabanaSizeLabel"
-            android:id="@+id/cabanaSizeOutput"
-            android:layout_marginTop="15dp"
-            android:layout_marginHorizontal="10dp"
-            app:layout_constraintTop_toBottomOf="@+id/typeOutput"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginTop="15dp"
+            app:layout_constraintTop_toBottomOf="@+id/typeOutput" />
+
+        <TextView
+            android:id="@+id/cabanaSizeOutput"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="15dp"
+            app:layout_constraintStart_toEndOf="@+id/cabanaSizeLabel"
+            app:layout_constraintTop_toBottomOf="@+id/typeOutput" />
+
+        <TextView
             android:id="@+id/bathroomSizeLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="15dp"
             android:text="Bathroom Size:"
             app:layout_constraintEnd_toStartOf="@+id/bathroomSizeOutput"
-            app:layout_constraintTop_toBottomOf="@+id/cabanaSizeOutput"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintStart_toEndOf="@+id/bathroomSizeLabel"
-            android:id="@+id/bathroomSizeOutput"
-            android:layout_marginTop="15dp"
-            android:layout_marginHorizontal="10dp"
-            app:layout_constraintTop_toBottomOf="@+id/cabanaSizeOutput"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginTop="15dp"
+            app:layout_constraintTop_toBottomOf="@+id/cabanaSizeOutput" />
+
+        <TextView
+            android:id="@+id/bathroomSizeOutput"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="15dp"
+            app:layout_constraintStart_toEndOf="@+id/bathroomSizeLabel"
+            app:layout_constraintTop_toBottomOf="@+id/cabanaSizeOutput" />
+
+        <TextView
             android:id="@+id/roomFloorLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="15dp"
             android:text="Floor Type:"
             app:layout_constraintEnd_toStartOf="@+id/roomFloorOutput"
-            app:layout_constraintTop_toBottomOf="@+id/bathroomSizeOutput"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintStart_toEndOf="@+id/roomFloorLabel"
-            android:id="@+id/roomFloorOutput"
-            android:layout_marginTop="15dp"
-            android:layout_marginHorizontal="10dp"
-            app:layout_constraintTop_toBottomOf="@+id/bathroomSizeOutput"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginTop="15dp"
+            app:layout_constraintTop_toBottomOf="@+id/bathroomSizeOutput" />
+
+        <TextView
+            android:id="@+id/roomFloorOutput"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="15dp"
+            app:layout_constraintStart_toEndOf="@+id/roomFloorLabel"
+            app:layout_constraintTop_toBottomOf="@+id/bathroomSizeOutput" />
+
+        <TextView
             android:id="@+id/wardrobeLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="15dp"
             android:text="Wardrobe Type:"
             app:layout_constraintEnd_toStartOf="@+id/wardrobeOutput"
-            app:layout_constraintTop_toBottomOf="@+id/roomFloorOutput"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintStart_toEndOf="@+id/wardrobeLabel"
-            android:id="@+id/wardrobeOutput"
-            android:layout_marginTop="15dp"
-            android:layout_marginHorizontal="10dp"
-            app:layout_constraintTop_toBottomOf="@+id/roomFloorOutput"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginTop="15dp"
+            app:layout_constraintTop_toBottomOf="@+id/roomFloorOutput" />
+
+        <TextView
+            android:id="@+id/wardrobeOutput"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="15dp"
+            app:layout_constraintStart_toEndOf="@+id/wardrobeLabel"
+            app:layout_constraintTop_toBottomOf="@+id/roomFloorOutput" />
+
+        <TextView
             android:id="@+id/wallLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="15dp"
             android:text="Wall Type:"
             app:layout_constraintEnd_toStartOf="@+id/wallOutput"
-            app:layout_constraintTop_toBottomOf="@+id/wardrobeOutput"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintStart_toEndOf="@+id/wallLabel"
-            android:id="@+id/wallOutput"
-            android:layout_marginTop="15dp"
-            android:layout_marginHorizontal="10dp"
-            app:layout_constraintTop_toBottomOf="@+id/wardrobeOutput"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginTop="15dp"
+            app:layout_constraintTop_toBottomOf="@+id/wardrobeOutput" />
+
+        <TextView
+            android:id="@+id/wallOutput"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="15dp"
+            app:layout_constraintStart_toEndOf="@+id/wallLabel"
+            app:layout_constraintTop_toBottomOf="@+id/wardrobeOutput" />
+
+        <TextView
             android:id="@+id/windowSizeLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="15dp"
             android:text="Window Size:"
             app:layout_constraintEnd_toStartOf="@+id/windowSizeOutput"
-            app:layout_constraintTop_toBottomOf="@+id/wallOutput"/>
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/wallOutput" />
+
         <TextView
+            android:id="@+id/windowSizeOutput"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintStart_toEndOf="@+id/windowSizeLabel"
-            android:id="@+id/windowSizeOutput"
-            android:layout_marginTop="15dp"
             android:layout_marginHorizontal="10dp"
-            app:layout_constraintTop_toBottomOf="@+id/wallOutput"/>
+            android:layout_marginTop="15dp"
+            app:layout_constraintStart_toEndOf="@+id/windowSizeLabel"
+            app:layout_constraintTop_toBottomOf="@+id/wallOutput" />
 
+        <TextView
+            android:id="@+id/windowShutterLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="15dp"
+            android:text="Window Shutter Type:"
+            app:layout_constraintEnd_toStartOf="@+id/windowShutterOutput"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/windowSizeOutput" />
 
+        <TextView
+            android:id="@+id/windowShutterOutput"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="15dp"
+            app:layout_constraintStart_toEndOf="@+id/windowShutterLabel"
+            app:layout_constraintTop_toBottomOf="@+id/windowSizeOutput" />
 
+        <TextView
+            android:id="@+id/lifterLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="15dp"
+            android:text="Lifter Type:"
+            app:layout_constraintEnd_toStartOf="@+id/lifterOutput"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/windowShutterOutput" />
 
+        <TextView
+            android:id="@+id/lifterOutput"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="15dp"
+            app:layout_constraintStart_toEndOf="@+id/lifterLabel"
+            app:layout_constraintTop_toBottomOf="@+id/windowShutterOutput" />
 
+        <TextView
+            android:id="@+id/bathroomTypeLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="15dp"
+            android:text="Bathroom Type:"
+            app:layout_constraintEnd_toStartOf="@+id/bathroomTypeOutput"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lifterOutput" />
+
+        <TextView
+            android:id="@+id/bathroomTypeOutput"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="15dp"
+            app:layout_constraintStart_toEndOf="@+id/bathroomTypeLabel"
+            app:layout_constraintTop_toBottomOf="@+id/lifterOutput" />
+
+        <TextView
+            android:id="@+id/conditionLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="15dp"
+            android:text="Condition Types:"
+            app:layout_constraintEnd_toStartOf="@+id/conditionOutput"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/bathroomTypeOutput" />
+
+        <TextView
+            android:id="@+id/conditionOutput"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="15dp"
+            app:layout_constraintStart_toEndOf="@+id/conditionLabel"
+            app:layout_constraintTop_toBottomOf="@+id/bathroomTypeOutput" />
+
+        <TextView
+            android:id="@+id/outerCoverLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="15dp"
+            android:text="Outer Cover Type:"
+            app:layout_constraintEnd_toStartOf="@+id/outerCoverOutput"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/conditionOutput" />
+
+        <TextView
+            android:id="@+id/outerCoverOutput"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="15dp"
+            app:layout_constraintStart_toEndOf="@+id/outerCoverLabel"
+            app:layout_constraintTop_toBottomOf="@+id/conditionOutput" />
+
+        <TextView
+            android:id="@+id/waterTankLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="15dp"
+            android:text="Water Tank Type:"
+            app:layout_constraintEnd_toStartOf="@+id/waterTankOutput"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/outerCoverOutput" />
+
+        <TextView
+            android:id="@+id/waterTankOutput"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="15dp"
+            app:layout_constraintStart_toEndOf="@+id/waterTankLabel"
+            app:layout_constraintTop_toBottomOf="@+id/outerCoverOutput" />
+
+        <TextView
+            android:id="@+id/towHookLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="15dp"
+            android:text="Water Tank Type:"
+            app:layout_constraintEnd_toStartOf="@+id/towHookOutput"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/waterTankOutput" />
+
+        <TextView
+            android:id="@+id/towHookOutput"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="15dp"
+            app:layout_constraintStart_toEndOf="@+id/towHookLabel"
+            app:layout_constraintTop_toBottomOf="@+id/waterTankOutput" />
+
+        <TextView
+            android:id="@+id/customNameLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="15dp"
+            android:text="Custom Name:"
+            app:layout_constraintEnd_toStartOf="@+id/customNameOutput"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/towHookOutput" />
+
+        <TextView
+            android:id="@+id/customNameOutput"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="15dp"
+            app:layout_constraintStart_toEndOf="@+id/customNameLabel"
+            app:layout_constraintTop_toBottomOf="@+id/towHookOutput" />
+
+        <TextView
+            android:id="@+id/doneButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/view_cabana_button"
+            android:padding="10dp"
+            android:text="Done"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/customNameLabel" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

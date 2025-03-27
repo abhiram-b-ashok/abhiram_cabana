@@ -1,20 +1,23 @@
 package com.example.cabana
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.widget.addTextChangedListener
-import androidx.core.widget.doOnTextChanged
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.example.cabana.databinding.FragmentCabanaSizeBinding
 
 
 class CabanaSizeFragment : Fragment() {
     private lateinit var binding: FragmentCabanaSizeBinding
-
+    private val args:CabanaSizeFragmentArgs by navArgs()
+//    private var progressBar:ProgressBar = 9
+//    private var progressText:TextView
+//    var i = 0
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -27,21 +30,31 @@ class CabanaSizeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.nextPageButton.setOnClickListener() {
+        Toast.makeText(requireContext(),"Hello",Toast.LENGTH_SHORT).show()
 
-            if (validate()){
-                findNavController().navigate(R.id.action_cabanaSizeFragment_to_bathroomSizeFragment)
+        binding.apply {
+            nextPageButton.setOnClickListener {
+                if (validate()){
+                    findNavController().navigate(CabanaSizeFragmentDirections.actionCabanaSizeFragmentToBathroomSizeFragment(args.chooseType, binding.lengthContent.text.toString()))
+                }
             }
+            buildBackArrow.setOnClickListener {
+                findNavController().navigateUp()
+            }
+            lengthContent.addTextChangedListener { tvErrorLength.visibility = View.GONE }
+            widthContent.addTextChangedListener { tvErrorWidth.visibility = View.GONE }
+            setProgressBar()
+
         }
-        binding.buildBackArrow.setOnClickListener()
-        {
-            findNavController().navigateUp()
+    }
+
+    private fun setProgressBar() = binding.apply {
+        progressText.text = "8%"
+        percentageBar.apply {
+            max = 100
+            progress = 80
+            isIndeterminate = false
         }
-
-
-        binding.lengthContent.addTextChangedListener { binding.tvErrorLength.visibility = View.GONE }
-        binding.widthContent.addTextChangedListener { binding.tvErrorWidth.visibility = View.GONE }
-
     }
 
     private fun validate():Boolean {

@@ -9,12 +9,14 @@ import android.widget.ImageView
 import android.widget.Toast
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.example.cabana.databinding.FragmentWindowShutterBinding
 
 
 class WindowShutterFragment : Fragment() {
     private lateinit var binding: FragmentWindowShutterBinding
-    private var selectedShutter:Int? = null
+    private var selectedShutter:String? = null
+    private val args:WindowShutterFragmentArgs by navArgs()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -29,7 +31,7 @@ class WindowShutterFragment : Fragment() {
         {
             if (selectedShutter!=null)
             {
-                findNavController().navigate(R.id.action_windowShutterFragment_to_liftersFragment)
+                findNavController().navigate(WindowShutterFragmentDirections.actionWindowShutterFragmentToLiftersFragment(args.chooseType,args.cabanSize,args.bathroomSize,args.floorType, args.wardrobeType,args.wallType,args.windowSize,selectedShutter.toString()))
             }
             else {
                 binding.apply {
@@ -48,12 +50,12 @@ class WindowShutterFragment : Fragment() {
         binding.shutterYesLayout.setOnClickListener()
         {
             selectShutter(1)
-            selectedShutter = 1
+            selectedShutter = "Yes"
         }
         binding.shutterNoLayout.setOnClickListener()
         {
             selectShutter(2)
-            selectedShutter = 2
+            selectedShutter = "No"
         }
 
     }

@@ -6,12 +6,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.example.cabana.databinding.FragmentTowHookBinding
 
 
 class TowHookFragment : Fragment() {
     private lateinit var binding: FragmentTowHookBinding
-    private var selectedHook: Int? = null
+    private var selectedHook: String? = null
+    private val args: TowHookFragmentArgs by navArgs()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -25,7 +27,7 @@ class TowHookFragment : Fragment() {
         binding.nextPageButton.setOnClickListener()
         {
             if (selectedHook!=null) {
-                findNavController().navigate(R.id.action_towHookFragment_to_customizationFragment)
+                findNavController().navigate(TowHookFragmentDirections.actionTowHookFragmentToCustomizationFragment(args.chooseType,args.cabanSize,args.bathroomSize,args.floorType, args.wardrobeType,args.wallType,args.windowSize,args.shutter,args.lifterType,args.bathRoomType,args.conditionTypes,args.outerCoverType,args.waterTankType,selectedHook.toString()))
             }
             else {
                 binding.apply {
@@ -42,12 +44,12 @@ class TowHookFragment : Fragment() {
         binding.hookYesLayout.setOnClickListener()
         {
             selectHook(1)
-            selectedHook = 1
+            selectedHook = "Yes"
         }
         binding.hookNoLayout.setOnClickListener()
         {
             selectHook(2)
-            selectedHook = 2
+            selectedHook = "No"
         }
     }
 

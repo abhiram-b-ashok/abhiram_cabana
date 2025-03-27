@@ -8,12 +8,14 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.collection.emptyLongSet
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.example.cabana.databinding.FragmentWindowSizeBinding
 
 
 class WindowSizeFragment : Fragment() {
     private lateinit var binding: FragmentWindowSizeBinding
-    private var selectedSize: Int? = null
+    private var selectedSize: String? = null
+    private val args:WindowSizeFragmentArgs by navArgs()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -26,7 +28,7 @@ class WindowSizeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding.nextPageButton.setOnClickListener() {
             if (selectedSize != null) {
-                findNavController().navigate(R.id.action_windowSizeFragment_to_windowShutterFragment)
+                findNavController().navigate(WindowSizeFragmentDirections.actionWindowSizeFragmentToWindowShutterFragment(args.chooseType,args.cabanSize,args.bathroomSize,args.floorType, args.wardrobeType,args.wallType,selectedSize.toString()))
             } else {
 
                 binding.apply {
@@ -43,17 +45,17 @@ class WindowSizeFragment : Fragment() {
         binding.standardSizeLayout.setOnClickListener()
         {
             selectWindowSize(1)
-            selectedSize = 1
+            selectedSize = "Standard"
         }
         binding.mediumSizeLayout.setOnClickListener()
         {
             selectWindowSize(2)
-            selectedSize = 2
+            selectedSize = "Medium"
         }
         binding.largeSizeLayout.setOnClickListener()
         {
             selectWindowSize(3)
-            selectedSize = 3
+            selectedSize = "Large"
         }
     }
 

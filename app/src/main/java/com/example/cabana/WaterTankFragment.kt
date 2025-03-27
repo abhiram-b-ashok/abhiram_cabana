@@ -1,18 +1,19 @@
 package com.example.cabana
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.example.cabana.databinding.FragmentWaterTankBinding
 
 
 class WaterTankFragment : Fragment() {
     private lateinit var binding: FragmentWaterTankBinding
-    private var selectedTank:Int? = null
+    private var selectedTank:String? = null
+    private val args:WaterTankFragmentArgs by navArgs()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -27,22 +28,22 @@ class WaterTankFragment : Fragment() {
         binding.l500layout.setOnClickListener()
         {
             selectTank(1)
-            selectedTank = 1
+            selectedTank = "500 L"
         }
         binding.l1000layout.setOnClickListener()
         {
             selectTank(2)
-            selectedTank = 2
+            selectedTank = "1000 L"
         }
         binding.l1500layout.setOnClickListener()
         {
             selectTank(3)
-            selectedTank = 3
+            selectedTank = "1500 L"
         }
         binding.l2000layout.setOnClickListener()
         {
             selectTank(4)
-            selectedTank = 4
+            selectedTank = "2000L"
         }
         binding.buildBackArrow.setOnClickListener()
         {
@@ -51,7 +52,7 @@ class WaterTankFragment : Fragment() {
         binding.nextPageButton.setOnClickListener()
         {
             if(selectedTank!=null) {
-                findNavController().navigate(R.id.action_waterTankFragment_to_towHookFragment)
+                findNavController().navigate(WaterTankFragmentDirections.actionWaterTankFragmentToTowHookFragment(args.chooseType,args.cabanSize,args.bathroomSize,args.floorType, args.wardrobeType,args.wallType,args.windowSize,args.shutter,args.lifterType,args.bathRoomType,args.conditionTypes,args.outerCoverType,selectedTank.toString()))
             }
             else
             {

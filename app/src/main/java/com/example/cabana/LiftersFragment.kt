@@ -7,12 +7,14 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.example.cabana.databinding.FragmentLiftersBinding
 
 
 class LiftersFragment : Fragment() {
     private lateinit var binding: FragmentLiftersBinding
-    private var selectedLifter:Int? = null
+    private var selectedLifter:String? = null
+    private val args:LiftersFragmentArgs by navArgs()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -26,7 +28,7 @@ class LiftersFragment : Fragment() {
         binding.nextPageButton.setOnClickListener()
         {
             if (selectedLifter!=null){
-                findNavController().navigate(R.id.action_liftersFragment_to_bathroomTypeFragment)
+                findNavController().navigate(LiftersFragmentDirections.actionLiftersFragmentToBathroomTypeFragment(args.chooseType,args.cabanSize,args.bathroomSize,args.floorType, args.wardrobeType,args.wallType,args.windowSize,args.shutter,selectedLifter.toString()))
             }
             else{
                 binding.apply {
@@ -43,12 +45,12 @@ class LiftersFragment : Fragment() {
         binding.frontLifterLayout.setOnClickListener()
         {
             lifterSelect(1)
-            selectedLifter = 1
+            selectedLifter = "Only Front"
         }
         binding.allSidesLifterLayout.setOnClickListener()
         {
             lifterSelect(2)
-            selectedLifter = 2
+            selectedLifter = "All Sides"
         }
 
     }

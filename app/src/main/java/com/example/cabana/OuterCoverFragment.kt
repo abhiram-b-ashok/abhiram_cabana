@@ -6,12 +6,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.example.cabana.databinding.FragmentOuterCoverBinding
 
 
 class OuterCoverFragment : Fragment() {
     private lateinit var binding: FragmentOuterCoverBinding
-    private var selectedCover: Int? = null
+    private var selectedCover: String? = null
+    private val args:OuterCoverFragmentArgs by navArgs()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -25,7 +27,7 @@ class OuterCoverFragment : Fragment() {
         binding.nextPageButton.setOnClickListener()
         {
             if (selectedCover != null) {
-                findNavController().navigate(R.id.action_outerCoverFragment_to_waterTankFragment)
+                findNavController().navigate(OuterCoverFragmentDirections.actionOuterCoverFragmentToWaterTankFragment(args.chooseType,args.cabanSize,args.bathroomSize,args.floorType, args.wardrobeType,args.wallType,args.windowSize,args.shutter,args.lifterType,args.bathRoomType,args.conditionTypes,selectedCover.toString()))
             } else {
                 binding.apply {
                     ironLayout.setBackgroundResource(R.drawable.validity_alert_frame)
@@ -41,12 +43,12 @@ class OuterCoverFragment : Fragment() {
         binding.ironLayout.setOnClickListener()
         {
             selectCover(1)
-            selectedCover = 1
+            selectedCover = "Galvanised Iron"
         }
         binding.fiperLayout.setOnClickListener()
         {
             selectCover(2)
-            selectedCover = 2
+            selectedCover = "Fiper"
         }
 
 

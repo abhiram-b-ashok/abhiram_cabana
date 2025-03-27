@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.cabana.databinding.FragmentConditionBinding
@@ -17,6 +18,8 @@ class ConditionFragment : Fragment() {
     private lateinit var binding: FragmentConditionBinding
     private lateinit var adapter: ConditionAdapter
     private var selectedCondition: Int? = null
+    private val clickedList: ArrayList<String> = ArrayList()
+    private val args: ConditionFragmentArgs by navArgs()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -30,44 +33,58 @@ class ConditionFragment : Fragment() {
         binding.nextPageButton.setOnClickListener()
         {
             if (selectedCondition != null) {
-                findNavController().navigate(R.id.action_conditionFragment_to_outerCoverFragment)
+                findNavController().navigate(
+                    ConditionFragmentDirections.actionConditionFragmentToOuterCoverFragment(
+                        args.chooseType,
+                        args.cabanSize,
+                        args.bathroomSize,
+                        args.floorType,
+                        args.wardrobeType,
+                        args.wallType,
+                        args.windowSize,
+                        args.shutter,
+                        args.lifterType,
+                        args.bathRoomType,
+                        clickedList.toTypedArray()
+                    )
+                )
             } else {
                 Toast.makeText(context, "Please select a condition", Toast.LENGTH_SHORT).show()
-                }
-
             }
-            binding.buildBackArrow.setOnClickListener()
-            {
-                findNavController().navigateUp()
-            }
-            val list = arrayListOf(
-                ConditionItems("(1)TON"),
-                ConditionItems("(1)TON"),
-                ConditionItems("(2)TON"),
-                ConditionItems("(1)TON X 2"),
-                ConditionItems("(2,5)TON"),
-                ConditionItems("TON X 2"),
-                ConditionItems("WITHOUT"),
-            )
-
-            adapter = ConditionAdapter(list, object : ConditionSelectListener {
-                override fun clickCondition(position: Int, item: ConditionItems) {
-                    list.forEachIndexed { index, conditionItems ->
-                        if (index == position) {
-                            conditionItems.isSelected = !conditionItems.isSelected
-                            selectedCondition = position
-                        }
-                        // else conditionItems.isSelected = false
-                    }
-                    adapter.notifyDataSetChanged()
-                }
-            })
-            binding.conditionRecyclers.adapter = adapter
-            binding.conditionRecyclers.layoutManager = GridLayoutManager(requireContext(), 2)
-
 
         }
+        binding.buildBackArrow.setOnClickListener()
+        {
+            findNavController().navigateUp()
+        }
+        val list = arrayListOf(
+            ConditionItems("(1)TON"),
+            ConditionItems("(1)TON"),
+            ConditionItems("(2)TON"),
+            ConditionItems("(1)TON X 2"),
+            ConditionItems("(2,5)TON"),
+            ConditionItems("TON X 2"),
+            ConditionItems("WITHOUT"),
+        )
+
+
+        adapter = ConditionAdapter(list, object : ConditionSelectListener {
+            override fun clickCondition(position: Int, item: ConditionItems) {
+                list.forEachIndexed { index, conditionItems ->
+                    if (index == position) {
+                        conditionItems.isSelected = !conditionItems.isSelected
+                        selectedCondition = position
+                        clickedList.add(conditionItems.condition)
+                    }
+                    // else conditionItems.isSelected = false
+                }
+                adapter.notifyDataSetChanged()
+            }
+        })
+        binding.conditionRecyclers.adapter = adapter
+        binding.conditionRecyclers.layoutManager = GridLayoutManager(requireContext(), 2)
 
 
     }
+}
 

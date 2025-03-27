@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -59,7 +60,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="35dp"
             android:fontFamily="sans-serif-medium"
-            android:text="Step 1/2"
+            android:text="Step 1/12"
             android:textColor="#78BFA0"
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -68,23 +69,26 @@
 
             />
 
-        <ImageView
-            android:id="@+id/perCentEllipze"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/percentround"
+        <ProgressBar
+            android:id="@+id/percentage_bar"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/cabanaSizeLabel" />
+            app:layout_constraintTop_toTopOf="@+id/cabanaSizeLabel"
+            android:max="100"
+            android:progress="44"
+            android:indeterminateOnly="false"
+            />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="8%"
+            android:id="@+id/progressText"
             android:textColor="@color/white"
-            app:layout_constraintBottom_toBottomOf="@+id/perCentEllipze"
-            app:layout_constraintEnd_toEndOf="@+id/perCentEllipze"
-            app:layout_constraintStart_toStartOf="@+id/perCentEllipze"
-            app:layout_constraintTop_toTopOf="@+id/perCentEllipze" />
+            app:layout_constraintBottom_toBottomOf="@+id/percentage_bar"
+            app:layout_constraintEnd_toEndOf="@+id/percentage_bar"
+            app:layout_constraintStart_toStartOf="@+id/percentage_bar"
+            app:layout_constraintTop_toTopOf="@+id/percentage_bar" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

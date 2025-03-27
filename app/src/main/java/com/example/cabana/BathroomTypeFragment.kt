@@ -6,12 +6,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.example.cabana.databinding.FragmentBathroomTypeBinding
 
 
 class BathroomTypeFragment : Fragment() {
     private lateinit var binding: FragmentBathroomTypeBinding
-    private var selectedType:Int?=null
+    private var selectedType: String? = null
+    private val args: BathroomTypeFragmentArgs by navArgs()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -24,11 +26,22 @@ class BathroomTypeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding.nextPageButton.setOnClickListener()
         {
-            if (selectedType!=null)
-            {
-                findNavController().navigate(R.id.action_bathroomTypeFragment_to_conditionFragment)
-            }
-            else{
+            if (selectedType != null) {
+                findNavController().navigate(
+                    BathroomTypeFragmentDirections.actionBathroomTypeFragmentToConditionFragment(
+                        args.chooseType,
+                        args.cabanSize,
+                        args.bathroomSize,
+                        args.floorType,
+                        args.wardrobeType,
+                        args.wallType,
+                        args.windowSize,
+                        args.shutter,
+                        args.lifterType,
+                        selectedType.toString()
+                    )
+                )
+            } else {
                 binding.apply {
                     bathroomStandardLayout.setBackgroundResource(R.drawable.validity_alert_frame)
                     bathroomCustomLayout.setBackgroundResource(R.drawable.validity_alert_frame)
@@ -43,12 +56,12 @@ class BathroomTypeFragment : Fragment() {
         binding.bathroomStandardLayout.setOnClickListener()
         {
             selectBath(1)
-            selectedType = 1
+            selectedType = "Standard"
         }
         binding.bathroomCustomLayout.setOnClickListener()
         {
             selectBath(2)
-            selectedType = 2
+            selectedType = "Custom"
         }
 
     }
@@ -59,7 +72,6 @@ class BathroomTypeFragment : Fragment() {
             bathroomStandardRadio.setImageResource(if (type == 1) R.drawable.baseline_check_circle_24 else R.drawable.checkboxstyle)
             bathroomCustomLayout.setBackgroundResource(if (type == 2) R.drawable.size_card_layout_background else R.drawable.curve_for_corners)
             bathroomCustomRadio.setImageResource(if (type == 2) R.drawable.baseline_check_circle_24 else R.drawable.checkboxstyle)
-
         }
     }
 }

@@ -7,11 +7,13 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.example.cabana.databinding.FragmentTheWallBinding
 
 class TheWallFragment : Fragment() {
     private lateinit var binding: FragmentTheWallBinding
-    private var selectedWall: Int? = null
+    private var selectedWall: String? = null
+    private val args:TheWallFragmentArgs by navArgs()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -25,7 +27,7 @@ class TheWallFragment : Fragment() {
         binding.nextPageButton.setOnClickListener()
         {
             if (selectedWall != null) {
-                findNavController().navigate(R.id.action_theWallFragment_to_windowSizeFragment)
+                findNavController().navigate(TheWallFragmentDirections.actionTheWallFragmentToWindowSizeFragment(args.chooseType,args.cabanSize,args.bathroomSize,args.floorType, args.wardrobeType,selectedWall.toString()))
             } else {
                 binding.apply {
                     wallpaperLayout.setBackgroundResource(R.drawable.validity_alert_frame)
@@ -33,7 +35,6 @@ class TheWallFragment : Fragment() {
                     nothingLayout.setBackgroundResource(R.drawable.validity_alert_frame)
                 }
             }
-
             }
             binding.buildBackArrow.setOnClickListener()
             {
@@ -42,18 +43,20 @@ class TheWallFragment : Fragment() {
             binding.wallpaperLayout.setOnClickListener()
             {
                 selectPaint(1)
-                selectedWall = 1
+                selectedWall = "Wallpaper"
             }
             binding.paintLayout.setOnClickListener()
             {
                 selectPaint(2)
-                selectedWall = 2
+                selectedWall = "Paint"
             }
             binding.nothingLayout.setOnClickListener()
             {
                 selectPaint(3)
-                selectedWall = 3
+                selectedWall = "Nothing"
             }
+        binding.perCentEllipze.setProgress(100)
+        binding.progressText.setText("100")
         }
         private fun selectPaint(wall: Int) {
             binding.apply {

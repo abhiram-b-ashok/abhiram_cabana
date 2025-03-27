@@ -25,6 +25,7 @@ class ConditionAdapter(
         return list.size
     }
 
+
     class ConditionViewHolder(private val binding: ConditionRecyclerViewBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bindData(item: ConditionItems, listener: ConditionSelectListener) {
@@ -32,6 +33,7 @@ class ConditionAdapter(
                 conditionText.text = item.condition
                 if (item.isSelected) {
                     conditionLayout.setBackgroundResource(R.drawable.size_card_layout_background)
+
 
                 } else {
                     conditionLayout.setBackgroundResource(R.drawable.curve_for_corners)

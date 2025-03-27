@@ -22,6 +22,10 @@ class CabanaActivity : AppCompatActivity() {
         }
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host) as NavHostFragment
         navController = navHostFragment.navController
+        val fragmentsCount = supportFragmentManager.primaryNavigationFragment?.childFragmentManager?.backStackEntryCount
+
+
+
 //        setupActionBarWithNavController(navController)
 
     }

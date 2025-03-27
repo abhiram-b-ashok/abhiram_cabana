@@ -23,6 +23,10 @@
         <action
             android:id="@+id/action_cabanaSizeFragment_to_bathroomSizeFragment"
             app:destination="@id/bathroomSizeFragment" />
+        <argument
+            app:argType="string"
+            android:name="chooseType"
+            />
 
     </fragment>
     <fragment
@@ -33,6 +37,14 @@
         <action
             android:id="@+id/action_bathroomSizeFragment_to_roomFloorFragment"
             app:destination="@id/roomFloorFragment" />
+        <argument
+            app:argType="string"
+            android:name="chooseType"
+            />
+        <argument
+            app:argType="string"
+            android:name="cabanSize"
+            />
     </fragment>
     <fragment
         android:id="@+id/roomFloorFragment"
@@ -42,6 +54,17 @@
         <action
             android:id="@+id/action_roomFloorFragment_to_wardrobeFragment"
             app:destination="@id/wardrobeFragment" />
+        <argument
+            app:argType="string"
+            android:name="chooseType"
+            />
+        <argument
+            app:argType="string"
+            android:name="cabanSize"
+            />
+        <argument
+            app:argType="string"
+            android:name="bathroomSize"/>
     </fragment>
     <fragment
         android:id="@+id/wardrobeFragment"
@@ -51,6 +74,21 @@
         <action
             android:id="@+id/action_wardrobeFragment_to_theWallFragment"
             app:destination="@id/theWallFragment" />
+        <argument
+            app:argType="string"
+            android:name="chooseType"
+            />
+        <argument
+            app:argType="string"
+            android:name="cabanSize"
+            />
+        <argument
+            app:argType="string"
+            android:name="bathroomSize"/>
+        <argument
+            app:argType="string"
+            android:name="floorType"
+            />
     </fragment>
     <fragment
         android:id="@+id/theWallFragment"
@@ -60,6 +98,25 @@
         <action
             android:id="@+id/action_theWallFragment_to_windowSizeFragment"
             app:destination="@id/windowSizeFragment" />
+        <argument
+            app:argType="string"
+            android:name="chooseType"
+            />
+        <argument
+            app:argType="string"
+            android:name="cabanSize"
+            />
+        <argument
+            app:argType="string"
+            android:name="bathroomSize"/>
+        <argument
+            app:argType="string"
+            android:name="floorType"
+            />
+        <argument
+            app:argType="string"
+            android:name="wardrobeType"
+            />
     </fragment>
     <fragment
         android:id="@+id/windowSizeFragment"
@@ -69,6 +126,29 @@
         <action
             android:id="@+id/action_windowSizeFragment_to_windowShutterFragment"
             app:destination="@id/windowShutterFragment" />
+        <argument
+            app:argType="string"
+            android:name="chooseType"
+            />
+        <argument
+            app:argType="string"
+            android:name="cabanSize"
+            />
+        <argument
+            app:argType="string"
+            android:name="bathroomSize"/>
+        <argument
+            app:argType="string"
+            android:name="floorType"
+            />
+        <argument
+            app:argType="string"
+            android:name="wardrobeType"
+            />
+        <argument
+            app:argType="string"
+            android:name="wallType"
+            />
     </fragment>
     <fragment
         android:id="@+id/windowShutterFragment"
@@ -78,6 +158,33 @@
         <action
             android:id="@+id/action_windowShutterFragment_to_liftersFragment"
             app:destination="@id/liftersFragment" />
+        <argument
+            app:argType="string"
+            android:name="chooseType"
+            />
+        <argument
+            app:argType="string"
+            android:name="cabanSize"
+            />
+        <argument
+            app:argType="string"
+            android:name="bathroomSize"/>
+        <argument
+            app:argType="string"
+            android:name="floorType"
+            />
+        <argument
+            app:argType="string"
+            android:name="wardrobeType"
+            />
+        <argument
+            app:argType="string"
+            android:name="wallType"
+            />
+        <argument
+            app:argType="string"
+            android:name="windowSize"
+            />
     </fragment>
     <fragment
         android:id="@+id/liftersFragment"
@@ -87,6 +194,37 @@
         <action
             android:id="@+id/action_liftersFragment_to_bathroomTypeFragment"
             app:destination="@id/bathroomTypeFragment" />
+        <argument
+            app:argType="string"
+            android:name="chooseType"
+            />
+        <argument
+            app:argType="string"
+            android:name="cabanSize"
+            />
+        <argument
+            app:argType="string"
+            android:name="bathroomSize"/>
+        <argument
+            app:argType="string"
+            android:name="floorType"
+            />
+        <argument
+            app:argType="string"
+            android:name="wardrobeType"
+            />
+        <argument
+            app:argType="string"
+            android:name="wallType"
+            />
+        <argument
+            app:argType="string"
+            android:name="windowSize"
+            />
+        <argument
+            app:argType="string"
+            android:name="shutter"
+            />
     </fragment>
     <fragment
         android:id="@+id/bathroomTypeFragment"
@@ -96,6 +234,41 @@
         <action
             android:id="@+id/action_bathroomTypeFragment_to_conditionFragment"
             app:destination="@id/conditionFragment" />
+        <argument
+            app:argType="string"
+            android:name="chooseType"
+            />
+        <argument
+            app:argType="string"
+            android:name="cabanSize"
+            />
+        <argument
+            app:argType="string"
+            android:name="bathroomSize"/>
+        <argument
+            app:argType="string"
+            android:name="floorType"
+            />
+        <argument
+            app:argType="string"
+            android:name="wardrobeType"
+            />
+        <argument
+            app:argType="string"
+            android:name="wallType"
+            />
+        <argument
+            app:argType="string"
+            android:name="windowSize"
+            />
+        <argument
+            app:argType="string"
+            android:name="shutter"
+            />
+        <argument
+            app:argType="string"
+            android:name="lifterType"
+            />
     </fragment>
     <fragment
         android:id="@+id/conditionFragment"
@@ -105,6 +278,44 @@
         <action
             android:id="@+id/action_conditionFragment_to_outerCoverFragment"
             app:destination="@id/outerCoverFragment" />
+        <argument
+            app:argType="string"
+            android:name="chooseType"
+            />
+        <argument
+            app:argType="string"
+            android:name="cabanSize"
+            />
+        <argument
+            app:argType="string"
+            android:name="bathroomSize"/>
+        <argument
+            app:argType="string"
+            android:name="floorType"
+            />
+        <argument
+            app:argType="string"
+            android:name="wardrobeType"
+            />
+        <argument
+            app:argType="string"
+            android:name="wallType"
+            />
+        <argument
+            app:argType="string"
+            android:name="windowSize"
+            />
+        <argument
+            app:argType="string"
+            android:name="shutter"
+            />
+        <argument
+            app:argType="string"
+            android:name="lifterType"
+            />
+        <argument
+            app:argType="string"
+            android:name="bathRoomType"/>
     </fragment>
     <fragment
         android:id="@+id/outerCoverFragment"
@@ -114,6 +325,48 @@
         <action
             android:id="@+id/action_outerCoverFragment_to_waterTankFragment"
             app:destination="@id/waterTankFragment" />
+        <argument
+            app:argType="string"
+            android:name="chooseType"
+            />
+        <argument
+            app:argType="string"
+            android:name="cabanSize"
+            />
+        <argument
+            app:argType="string"
+            android:name="bathroomSize"/>
+        <argument
+            app:argType="string"
+            android:name="floorType"
+            />
+        <argument
+            app:argType="string"
+            android:name="wardrobeType"
+            />
+        <argument
+            app:argType="string"
+            android:name="wallType"
+            />
+        <argument
+            app:argType="string"
+            android:name="windowSize"
+            />
+        <argument
+            app:argType="string"
+            android:name="shutter"
+            />
+        <argument
+            app:argType="string"
+            android:name="lifterType"
+            />
+        <argument
+            app:argType="string"
+            android:name="bathRoomType"/>
+        <argument
+            app:argType="string[]"
+            android:name="conditionTypes"
+            />
     </fragment>
     <fragment
         android:id="@+id/waterTankFragment"
@@ -123,6 +376,52 @@
         <action
             android:id="@+id/action_waterTankFragment_to_towHookFragment"
             app:destination="@id/towHookFragment" />
+        <argument
+            app:argType="string"
+            android:name="chooseType"
+            />
+        <argument
+            app:argType="string"
+            android:name="cabanSize"
+            />
+        <argument
+            app:argType="string"
+            android:name="bathroomSize"/>
+        <argument
+            app:argType="string"
+            android:name="floorType"
+            />
+        <argument
+            app:argType="string"
+            android:name="wardrobeType"
+            />
+        <argument
+            app:argType="string"
+            android:name="wallType"
+            />
+        <argument
+            app:argType="string"
+            android:name="windowSize"
+            />
+        <argument
+            app:argType="string"
+            android:name="shutter"
+            />
+        <argument
+            app:argType="string"
+            android:name="lifterType"
+            />
+        <argument
+            app:argType="string"
+            android:name="bathRoomType"/>
+        <argument
+            app:argType="string[]"
+            android:name="conditionTypes"
+            />
+        <argument
+            app:argType="string"
+            android:name="outerCoverType"
+            />
     </fragment>
     <fragment
         android:id="@+id/towHookFragment"
@@ -132,6 +431,56 @@
         <action
             android:id="@+id/action_towHookFragment_to_customizationFragment"
             app:destination="@id/customizationFragment" />
+        <argument
+            app:argType="string"
+            android:name="chooseType"
+            />
+        <argument
+            app:argType="string"
+            android:name="cabanSize"
+            />
+        <argument
+            app:argType="string"
+            android:name="bathroomSize"/>
+        <argument
+            app:argType="string"
+            android:name="floorType"
+            />
+        <argument
+            app:argType="string"
+            android:name="wardrobeType"
+            />
+        <argument
+            app:argType="string"
+            android:name="wallType"
+            />
+        <argument
+            app:argType="string"
+            android:name="windowSize"
+            />
+        <argument
+            app:argType="string"
+            android:name="shutter"
+            />
+        <argument
+            app:argType="string"
+            android:name="lifterType"
+            />
+        <argument
+            app:argType="string"
+            android:name="bathRoomType"/>
+        <argument
+            app:argType="string[]"
+            android:name="conditionTypes"
+            />
+        <argument
+            app:argType="string"
+            android:name="outerCoverType"
+            />
+        <argument
+            app:argType="string"
+            android:name="waterTankType"
+            />
     </fragment>
     <fragment
         android:id="@+id/customizationFragment"
@@ -141,10 +490,123 @@
         <action
             android:id="@+id/action_customizationFragment_to_submitSuccessFragment"
             app:destination="@id/submitSuccessFragment" />
+        <argument
+            app:argType="string"
+            android:name="chooseType"
+            />
+        <argument
+            app:argType="string"
+            android:name="cabanSize"
+            />
+        <argument
+            app:argType="string"
+            android:name="bathroomSize"/>
+        <argument
+            app:argType="string"
+            android:name="floorType"
+            />
+        <argument
+            app:argType="string"
+            android:name="wardrobeType"
+            />
+        <argument
+            app:argType="string"
+            android:name="wallType"
+            />
+        <argument
+            app:argType="string"
+            android:name="windowSize"
+            />
+        <argument
+            app:argType="string"
+            android:name="shutter"
+            />
+        <argument
+            app:argType="string"
+            android:name="lifterType"
+            />
+        <argument
+            app:argType="string"
+            android:name="bathRoomType"/>
+        <argument
+            app:argType="string[]"
+            android:name="conditionTypes"
+            />
+        <argument
+            app:argType="string"
+            android:name="outerCoverType"
+            />
+        <argument
+            app:argType="string"
+            android:name="waterTankType"
+            />
+        <argument
+            app:argType="string"
+            android:name="hookType"
+            />
     </fragment>
     <fragment
         android:id="@+id/submitSuccessFragment"
         android:name="com.example.cabana.SubmitSuccessFragment"
         android:label="fragment_submit_success"
-        tools:layout="@layout/fragment_submit_success" />
+        tools:layout="@layout/fragment_submit_success" >
+        <argument
+            app:argType="string"
+            android:name="chooseType"
+            />
+        <argument
+            app:argType="string"
+            android:name="cabanSize"
+            />
+        <argument
+            app:argType="string"
+            android:name="bathroomSize"/>
+        <argument
+            app:argType="string"
+            android:name="floorType"
+            />
+        <argument
+            app:argType="string"
+            android:name="wardrobeType"
+            />
+        <argument
+            app:argType="string"
+            android:name="wallType"
+            />
+        <argument
+            app:argType="string"
+            android:name="windowSize"
+            />
+        <argument
+            app:argType="string"
+            android:name="shutter"
+            />
+        <argument
+            app:argType="string"
+            android:name="lifterType"
+            />
+        <argument
+            app:argType="string"
+            android:name="bathRoomType"/>
+        <argument
+            app:argType="string[]"
+            android:name="conditionTypes"
+            />
+        <argument
+            app:argType="string"
+            android:name="outerCoverType"
+            />
+        <argument
+            app:argType="string"
+            android:name="waterTankType"
+            />
+        <argument
+            app:argType="string"
+            android:name="hookType"
+            />
+        <argument
+            app:argType="string"
+            android:name="customName"
+            />
+    </fragment>
 </navigation>

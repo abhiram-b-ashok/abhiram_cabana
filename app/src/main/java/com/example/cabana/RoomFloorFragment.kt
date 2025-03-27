@@ -7,12 +7,14 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.example.cabana.databinding.FragmentRoomFloorBinding
 
 
 class RoomFloorFragment : Fragment() {
   private lateinit var binding: FragmentRoomFloorBinding
-    private var selectedFloor:Int? =null
+    private var selectedFloors:String? =null
+    private val args: RoomFloorFragmentArgs by navArgs()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -25,8 +27,8 @@ class RoomFloorFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding.nextPageButton.setOnClickListener()
         {
-            if(selectedFloor!=null){
-                findNavController().navigate(R.id.action_roomFloorFragment_to_wardrobeFragment)
+            if(selectedFloors!=null){
+                findNavController().navigate(RoomFloorFragmentDirections.actionRoomFloorFragmentToWardrobeFragment(args.chooseType,args.cabanSize,args.bathroomSize, selectedFloors.toString()))
             }
             else{
                 binding.apply {
@@ -45,19 +47,19 @@ class RoomFloorFragment : Fragment() {
         }
         binding.parquetLayout.setOnClickListener() {
             selectedFloor(1)
-            selectedFloor = 1
+            selectedFloors = "Parquet"
         }
         binding.carpetLayout.setOnClickListener() {
             selectedFloor(2)
-            selectedFloor = 2
+            selectedFloors = "Carpet"
         }
         binding.tileLayout.setOnClickListener() {
            selectedFloor(3)
-            selectedFloor = 3
+            selectedFloors = "Marble"
         }
         binding.nothingTileLayout.setOnClickListener() {
             selectedFloor(4)
-            selectedFloor = 4
+            selectedFloors = "Nothing"
         }
 
     }
