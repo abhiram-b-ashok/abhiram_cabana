@@ -24,11 +24,24 @@ class CustomizationFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding.nextPageButton.setOnClickListener()
         {
-            findNavController().navigate(R.id.action_customizationFragment_to_submitSuccessFragment)
+            if (nameValidation())
+            {
+                findNavController().navigate(R.id.action_customizationFragment_to_submitSuccessFragment)
+            }
+
         }
         binding.buildBackArrow.setOnClickListener()
         {
             findNavController().navigateUp()
         }
+    }
+    private fun nameValidation(): Boolean
+    {
+        var isValid = true;
+        if(binding.nameEditText.text.isEmpty()) {
+            binding.invalidName.visibility = View.VISIBLE
+            isValid = false
+        }
+        return isValid
     }
 }

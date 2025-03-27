@@ -15,7 +15,7 @@ import com.example.cabana.databinding.FragmentChooseTypeBinding
 
 class ChooseTypeFragment : Fragment() {
     private lateinit var binding: FragmentChooseTypeBinding
-    private var selectedTile :Int? =null
+    private var selectedCard :Int? =null
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -27,10 +27,15 @@ class ChooseTypeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.viewCabanaButton.setOnClickListener() {
-            if (selectedTile!=null)
+            if (selectedCard!=null)
             findNavController().navigate(R.id.action_chooseTypeFragment_to_cabanaSizeFragment)
-            else
-                Toast.makeText(context, "Please select a tile", Toast.LENGTH_SHORT).show()
+            else {
+                binding.apply {
+                    standardLayout.setBackgroundResource(R.drawable.validity_alert_frame)
+                    customLayout.setBackgroundResource(R.drawable.validity_alert_frame)
+            }
+            }
+
         }
         binding.buildBackArrow.setOnClickListener()
         {
@@ -38,12 +43,12 @@ class ChooseTypeFragment : Fragment() {
         }
         binding.standardCard.setOnClickListener()
         {
-            selectedTile = 1
+            selectedCard = 1
             switchButton(1)
         }
         binding.customCard.setOnClickListener()
         {
-            selectedTile = 2
+            selectedCard = 2
             switchButton(2)
         }
 

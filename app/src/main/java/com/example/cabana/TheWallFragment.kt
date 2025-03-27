@@ -10,13 +10,13 @@ import androidx.navigation.fragment.findNavController
 import com.example.cabana.databinding.FragmentTheWallBinding
 
 class TheWallFragment : Fragment() {
-private lateinit var binding: FragmentTheWallBinding
-private var selectedWall:Int? =null
+    private lateinit var binding: FragmentTheWallBinding
+    private var selectedWall: Int? = null
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentTheWallBinding.inflate(inflater,container,false)
+        binding = FragmentTheWallBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -24,43 +24,45 @@ private var selectedWall:Int? =null
         super.onViewCreated(view, savedInstanceState)
         binding.nextPageButton.setOnClickListener()
         {
-            if(selectedWall!=null){
+            if (selectedWall != null) {
                 findNavController().navigate(R.id.action_theWallFragment_to_windowSizeFragment)
-            }
-            else{
-                Toast.makeText(context,"Please select a model",Toast.LENGTH_SHORT).show()
+            } else {
+                binding.apply {
+                    wallpaperLayout.setBackgroundResource(R.drawable.validity_alert_frame)
+                    paintLayout.setBackgroundResource(R.drawable.validity_alert_frame)
+                    nothingLayout.setBackgroundResource(R.drawable.validity_alert_frame)
+                }
             }
 
+            }
+            binding.buildBackArrow.setOnClickListener()
+            {
+                findNavController().navigateUp()
+            }
+            binding.wallpaperLayout.setOnClickListener()
+            {
+                selectPaint(1)
+                selectedWall = 1
+            }
+            binding.paintLayout.setOnClickListener()
+            {
+                selectPaint(2)
+                selectedWall = 2
+            }
+            binding.nothingLayout.setOnClickListener()
+            {
+                selectPaint(3)
+                selectedWall = 3
+            }
         }
-        binding.buildBackArrow.setOnClickListener()
-        {
-            findNavController().navigateUp()
-        }
-        binding.wallpaperLayout.setOnClickListener()
-        {
-            selectPaint(1)
-            selectedWall = 1
-        }
-        binding.paintLayout.setOnClickListener()
-        {
-            selectPaint(2)
-            selectedWall = 2
-        }
-        binding.nothingLayout.setOnClickListener()
-        {
-            selectPaint(3)
-            selectedWall = 3
+        private fun selectPaint(wall: Int) {
+            binding.apply {
+                wallpaperLayout.setBackgroundResource(if (wall == 1) R.drawable.size_card_layout_background else R.drawable.curve_for_corners)
+                wallpaperRadio.setImageResource(if (wall == 1) R.drawable.baseline_check_circle_24 else R.drawable.checkboxstyle)
+                paintLayout.setBackgroundResource(if (wall == 2) R.drawable.size_card_layout_background else R.drawable.curve_for_corners)
+                paintRadio.setImageResource(if (wall == 2) R.drawable.baseline_check_circle_24 else R.drawable.checkboxstyle)
+                nothingLayout.setBackgroundResource(if (wall == 3) R.drawable.size_card_layout_background else R.drawable.curve_for_corners)
+                nothingRadio.setImageResource(if (wall == 3) R.drawable.baseline_check_circle_24 else R.drawable.checkboxstyle)
+            }
         }
     }
-    private fun selectPaint(wall:Int)
-    {
-        binding.apply {
-            wallpaperLayout.setBackgroundResource(if (wall == 1) R.drawable.size_card_layout_background else R.drawable.curve_for_corners)
-            wallpaperRadio.setImageResource(if (wall == 1) R.drawable.baseline_check_circle_24 else R.drawable.checkboxstyle)
-            paintLayout.setBackgroundResource(if (wall == 2) R.drawable.size_card_layout_background else R.drawable.curve_for_corners)
-            paintRadio.setImageResource(if (wall == 2) R.drawable.baseline_check_circle_24 else R.drawable.checkboxstyle)
-            nothingLayout.setBackgroundResource(if (wall == 3) R.drawable.size_card_layout_background else R.drawable.curve_for_corners)
-            nothingRadio.setImageResource(if (wall == 3) R.drawable.baseline_check_circle_24 else R.drawable.checkboxstyle)
-        }
-    }
-}

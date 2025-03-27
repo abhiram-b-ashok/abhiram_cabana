@@ -34,7 +34,6 @@
             android:layout_marginTop="48dp"
             android:fontFamily="sans-serif-medium"
             android:text="CUSTOM"
-
             android:textColor="@color/white"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -206,15 +205,16 @@
 
 
         </LinearLayout>
+
         <TextView
+            android:id="@+id/tvErrorWidth"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="@id/sizeWidthLayout"
-            app:layout_constraintTop_toBottomOf="@id/sizeWidthLayout"
+            android:text="Please Enter the width"
             android:textColor="@color/red"
             android:visibility="gone"
-            android:text="Please Enter the width"
-            android:id="@+id/tvErrorWidth"/>
+            app:layout_constraintStart_toStartOf="@id/sizeWidthLayout"
+            app:layout_constraintTop_toBottomOf="@id/sizeWidthLayout" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

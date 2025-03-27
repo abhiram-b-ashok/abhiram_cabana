@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
@@ -15,6 +16,7 @@ import com.example.cabana.databinding.FragmentConditionBinding
 class ConditionFragment : Fragment() {
     private lateinit var binding: FragmentConditionBinding
     private lateinit var adapter: ConditionAdapter
+    private var selectedCondition: Int? = null
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -27,37 +29,45 @@ class ConditionFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding.nextPageButton.setOnClickListener()
         {
-            findNavController().navigate(R.id.action_conditionFragment_to_outerCoverFragment)
-        }
-        binding.buildBackArrow.setOnClickListener()
-        {
-            findNavController().navigateUp()
-        }
-        val list = arrayListOf(
-            ConditionItems("(1)TON"),
-            ConditionItems("(1)TON"),
-            ConditionItems("(2)TON"),
-            ConditionItems("(1)TON X 2"),
-            ConditionItems("(2,5)TON"),
-            ConditionItems("TON X 2"),
-            ConditionItems("WITHOUT"),
-        )
-
-        adapter = ConditionAdapter(list, object : ConditionSelectListener {
-            override fun clickCondition(position: Int, item: ConditionItems) {
-                list.forEachIndexed { index, conditionItems ->
-                    if (index==position)
-                        conditionItems.isSelected = !conditionItems.isSelected
-                   // else conditionItems.isSelected = false
+            if (selectedCondition != null) {
+                findNavController().navigate(R.id.action_conditionFragment_to_outerCoverFragment)
+            } else {
+                Toast.makeText(context, "Please select a condition", Toast.LENGTH_SHORT).show()
                 }
-                adapter.notifyDataSetChanged()
+
             }
-        })
-        binding.conditionRecyclers.adapter = adapter
-        binding.conditionRecyclers.layoutManager = GridLayoutManager(requireContext(), 2)
+            binding.buildBackArrow.setOnClickListener()
+            {
+                findNavController().navigateUp()
+            }
+            val list = arrayListOf(
+                ConditionItems("(1)TON"),
+                ConditionItems("(1)TON"),
+                ConditionItems("(2)TON"),
+                ConditionItems("(1)TON X 2"),
+                ConditionItems("(2,5)TON"),
+                ConditionItems("TON X 2"),
+                ConditionItems("WITHOUT"),
+            )
+
+            adapter = ConditionAdapter(list, object : ConditionSelectListener {
+                override fun clickCondition(position: Int, item: ConditionItems) {
+                    list.forEachIndexed { index, conditionItems ->
+                        if (index == position) {
+                            conditionItems.isSelected = !conditionItems.isSelected
+                            selectedCondition = position
+                        }
+                        // else conditionItems.isSelected = false
+                    }
+                    adapter.notifyDataSetChanged()
+                }
+            })
+            binding.conditionRecyclers.adapter = adapter
+            binding.conditionRecyclers.layoutManager = GridLayoutManager(requireContext(), 2)
+
+
+        }
 
 
     }
 
-
-}

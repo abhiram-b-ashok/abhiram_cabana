@@ -11,7 +11,7 @@ import com.example.cabana.databinding.FragmentOuterCoverBinding
 
 class OuterCoverFragment : Fragment() {
     private lateinit var binding: FragmentOuterCoverBinding
-
+    private var selectedCover: Int? = null
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -24,7 +24,15 @@ class OuterCoverFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding.nextPageButton.setOnClickListener()
         {
-            findNavController().navigate(R.id.action_outerCoverFragment_to_waterTankFragment)
+            if (selectedCover != null) {
+                findNavController().navigate(R.id.action_outerCoverFragment_to_waterTankFragment)
+            } else {
+                binding.apply {
+                    ironLayout.setBackgroundResource(R.drawable.validity_alert_frame)
+                    fiperLayout.setBackgroundResource(R.drawable.validity_alert_frame)
+                }
+            }
+
         }
         binding.buildBackArrow.setOnClickListener()
         {
@@ -33,10 +41,12 @@ class OuterCoverFragment : Fragment() {
         binding.ironLayout.setOnClickListener()
         {
             selectCover(1)
+            selectedCover = 1
         }
         binding.fiperLayout.setOnClickListener()
         {
             selectCover(2)
+            selectedCover = 2
         }
 
 

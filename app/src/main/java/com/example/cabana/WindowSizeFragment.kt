@@ -28,7 +28,12 @@ class WindowSizeFragment : Fragment() {
             if (selectedSize != null) {
                 findNavController().navigate(R.id.action_windowSizeFragment_to_windowShutterFragment)
             } else {
-                Toast.makeText(context, "Please select a model", Toast.LENGTH_SHORT).show()
+
+                binding.apply {
+                    standardSizeLayout.setBackgroundResource(R.drawable.validity_alert_frame)
+                    mediumSizeLayout.setBackgroundResource(R.drawable.validity_alert_frame)
+                    largeSizeLayout.setBackgroundResource(R.drawable.validity_alert_frame)
+                }
             }
         }
         binding.buildBackArrow.setOnClickListener()
@@ -59,7 +64,7 @@ class WindowSizeFragment : Fragment() {
             mediumSizeLayout.setBackgroundResource(if (size == 2) R.drawable.size_card_layout_background else R.drawable.curve_for_corners)
             mediumSizeRadio.setImageResource(if (size == 2) R.drawable.baseline_check_circle_24 else R.drawable.checkboxstyle)
             largeSizeLayout.setBackgroundResource(if (size == 3) R.drawable.size_card_layout_background else R.drawable.curve_for_corners)
-            largeSizeRadio.setImageResource(if (size == 4) R.drawable.baseline_check_circle_24 else R.drawable.checkboxstyle)
+            largeSizeRadio.setImageResource(if (size == 3) R.drawable.baseline_check_circle_24 else R.drawable.checkboxstyle)
 
         }
     }

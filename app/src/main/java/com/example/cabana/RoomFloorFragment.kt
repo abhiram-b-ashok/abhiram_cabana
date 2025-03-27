@@ -29,7 +29,13 @@ class RoomFloorFragment : Fragment() {
                 findNavController().navigate(R.id.action_roomFloorFragment_to_wardrobeFragment)
             }
             else{
-                Toast.makeText(context,"Please Select a type",Toast.LENGTH_SHORT).show()
+                binding.apply {
+                    parquetLayout.setBackgroundResource(R.drawable.validity_alert_frame)
+                    carpetLayout.setBackgroundResource(R.drawable.validity_alert_frame)
+                    tileLayout.setBackgroundResource(R.drawable.validity_alert_frame)
+                    nothingTileLayout.setBackgroundResource(R.drawable.validity_alert_frame)
+                }
+
             }
 
         }

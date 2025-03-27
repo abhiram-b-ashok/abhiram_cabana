@@ -29,7 +29,10 @@ class LiftersFragment : Fragment() {
                 findNavController().navigate(R.id.action_liftersFragment_to_bathroomTypeFragment)
             }
             else{
-                Toast.makeText(context, "Please select a lifter", Toast.LENGTH_SHORT).show()
+                binding.apply {
+                    frontLifterLayout.setBackgroundResource(R.drawable.validity_alert_frame)
+                    allSidesLifterLayout.setBackgroundResource(R.drawable.validity_alert_frame)
+                }
             }
 
         }

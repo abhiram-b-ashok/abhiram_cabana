@@ -31,7 +31,12 @@ class BathroomSizeFragment : Fragment() {
             }
             else
             {
-                Toast.makeText(context,"Please Select Size", Toast.LENGTH_SHORT).show()
+                binding.apply {
+                    standardSizeLayout.setBackgroundResource(R.drawable.validity_alert_frame)
+                    mediumSizeLayout.setBackgroundResource(R.drawable.validity_alert_frame)
+                    largeSizeLayout.setBackgroundResource(R.drawable.validity_alert_frame)
+
+                }
             }
         }
         binding.buildBackArrow.setOnClickListener()

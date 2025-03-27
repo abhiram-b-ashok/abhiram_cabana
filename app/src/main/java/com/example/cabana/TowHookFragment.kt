@@ -11,7 +11,7 @@ import com.example.cabana.databinding.FragmentTowHookBinding
 
 class TowHookFragment : Fragment() {
     private lateinit var binding: FragmentTowHookBinding
-
+    private var selectedHook: Int? = null
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -24,7 +24,16 @@ class TowHookFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding.nextPageButton.setOnClickListener()
         {
-            findNavController().navigate(R.id.action_towHookFragment_to_customizationFragment)
+            if (selectedHook!=null) {
+                findNavController().navigate(R.id.action_towHookFragment_to_customizationFragment)
+            }
+            else {
+                binding.apply {
+                    hookYesLayout.setBackgroundResource(R.drawable.validity_alert_frame)
+                    hookNoLayout.setBackgroundResource(R.drawable.validity_alert_frame)
+                }
+            }
+
         }
         binding.buildBackArrow.setOnClickListener()
         {
@@ -33,17 +42,19 @@ class TowHookFragment : Fragment() {
         binding.hookYesLayout.setOnClickListener()
         {
             selectHook(1)
+            selectedHook = 1
         }
         binding.hookNoLayout.setOnClickListener()
         {
             selectHook(2)
+            selectedHook = 2
         }
     }
 
     private fun selectHook(select: Int) {
         binding.hookYesLayout.setBackgroundResource(if (select == 1) R.drawable.size_card_layout_background else R.drawable.curve_for_corners)
         binding.yesRadio.setImageResource(if (select == 1) R.drawable.baseline_check_circle_24 else R.drawable.checkboxstyle)
-        binding.hookNoLayout.setBackgroundResource(if (select == 1) R.drawable.size_card_layout_background else R.drawable.curve_for_corners)
-        binding.noRadio.setImageResource(if (select == 1) R.drawable.baseline_check_circle_24 else R.drawable.checkboxstyle)
+        binding.hookNoLayout.setBackgroundResource(if (select == 2) R.drawable.size_card_layout_background else R.drawable.curve_for_corners)
+        binding.noRadio.setImageResource(if (select == 2) R.drawable.baseline_check_circle_24 else R.drawable.checkboxstyle)
     }
 }

@@ -55,7 +55,12 @@ class WaterTankFragment : Fragment() {
             }
             else
             {
-                Toast.makeText(context,"Select a Tank",Toast.LENGTH_SHORT).show()
+                binding.apply {
+                    l500layout.setBackgroundResource(R.drawable.validity_alert_frame)
+                    l1000layout.setBackgroundResource(R.drawable.validity_alert_frame)
+                    l1500layout.setBackgroundResource(R.drawable.validity_alert_frame)
+                    l2000layout.setBackgroundResource(R.drawable.validity_alert_frame)
+                }
             }
         }
 

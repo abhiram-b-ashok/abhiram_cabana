@@ -7,6 +7,7 @@
     tools:context=".SubmitSuccessFragment"
     android:background="#666565">
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/successLayout"
         android:layout_width="match_parent"
         android:layout_height="300dp"
         android:background="@drawable/curve_for_corners"
@@ -65,6 +66,164 @@
             app:layout_constraintBottom_toBottomOf="parent"
             android:layout_marginBottom="30dp"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/curve_for_corners"
+        android:id="@+id/outputLayout"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:text="RENTAL DONE SUCCESSFULLY"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:gravity="center"
+            android:id="@+id/outputHead"
+            android:layout_marginTop="20dp"
+            app:layout_constraintTop_toTopOf="parent"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="15dp"
+            android:layout_marginHorizontal="10dp"
+            android:id="@+id/typeLabel"
+            android:text="Selected Type:"
+            app:layout_constraintEnd_toStartOf="@+id/typeOutput"
+            app:layout_constraintTop_toBottomOf="@+id/outputHead"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@+id/typeLabel"
+            android:id="@+id/typeOutput"
+            android:layout_marginTop="15dp"
+            android:layout_marginHorizontal="10dp"
+            app:layout_constraintTop_toBottomOf="@+id/outputHead"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="15dp"
+            android:layout_marginHorizontal="10dp"
+            android:id="@+id/cabanaSizeLabel"
+            android:text="Cabana Size:"
+            app:layout_constraintEnd_toStartOf="@+id/cabanaSizeOutput"
+            app:layout_constraintTop_toBottomOf="@+id/typeOutput"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@+id/cabanaSizeLabel"
+            android:id="@+id/cabanaSizeOutput"
+            android:layout_marginTop="15dp"
+            android:layout_marginHorizontal="10dp"
+            app:layout_constraintTop_toBottomOf="@+id/typeOutput"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="15dp"
+            android:layout_marginHorizontal="10dp"
+            android:id="@+id/bathroomSizeLabel"
+            android:text="Bathroom Size:"
+            app:layout_constraintEnd_toStartOf="@+id/bathroomSizeOutput"
+            app:layout_constraintTop_toBottomOf="@+id/cabanaSizeOutput"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@+id/bathroomSizeLabel"
+            android:id="@+id/bathroomSizeOutput"
+            android:layout_marginTop="15dp"
+            android:layout_marginHorizontal="10dp"
+            app:layout_constraintTop_toBottomOf="@+id/cabanaSizeOutput"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="15dp"
+            android:layout_marginHorizontal="10dp"
+            android:id="@+id/roomFloorLabel"
+            android:text="Floor Type:"
+            app:layout_constraintEnd_toStartOf="@+id/roomFloorOutput"
+            app:layout_constraintTop_toBottomOf="@+id/bathroomSizeOutput"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@+id/roomFloorLabel"
+            android:id="@+id/roomFloorOutput"
+            android:layout_marginTop="15dp"
+            android:layout_marginHorizontal="10dp"
+            app:layout_constraintTop_toBottomOf="@+id/bathroomSizeOutput"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="15dp"
+            android:layout_marginHorizontal="10dp"
+            android:id="@+id/wardrobeLabel"
+            android:text="Wardrobe Type:"
+            app:layout_constraintEnd_toStartOf="@+id/wardrobeOutput"
+            app:layout_constraintTop_toBottomOf="@+id/roomFloorOutput"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@+id/wardrobeLabel"
+            android:id="@+id/wardrobeOutput"
+            android:layout_marginTop="15dp"
+            android:layout_marginHorizontal="10dp"
+            app:layout_constraintTop_toBottomOf="@+id/roomFloorOutput"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="15dp"
+            android:layout_marginHorizontal="10dp"
+            android:id="@+id/wallLabel"
+            android:text="Wall Type:"
+            app:layout_constraintEnd_toStartOf="@+id/wallOutput"
+            app:layout_constraintTop_toBottomOf="@+id/wardrobeOutput"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@+id/wallLabel"
+            android:id="@+id/wallOutput"
+            android:layout_marginTop="15dp"
+            android:layout_marginHorizontal="10dp"
+            app:layout_constraintTop_toBottomOf="@+id/wardrobeOutput"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="15dp"
+            android:layout_marginHorizontal="10dp"
+            android:id="@+id/windowSizeLabel"
+            android:text="Window Size:"
+            app:layout_constraintEnd_toStartOf="@+id/windowSizeOutput"
+            app:layout_constraintTop_toBottomOf="@+id/wallOutput"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@+id/windowSizeLabel"
+            android:id="@+id/windowSizeOutput"
+            android:layout_marginTop="15dp"
+            android:layout_marginHorizontal="10dp"
+            app:layout_constraintTop_toBottomOf="@+id/wallOutput"/>
+
+
+
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 
 

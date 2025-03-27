@@ -29,14 +29,6 @@ class CabanaSizeFragment : Fragment() {
 
         binding.nextPageButton.setOnClickListener() {
 
-           /* if(binding.lengthContent.text.isNotEmpty() && binding.widthContent.text.isNotEmpty())
-            {
-                findNavController().navigate(R.id.action_cabanaSizeFragment_to_bathroomSizeFragment)
-            }
-            else{
-                Toast.makeText(context,"Please give length and width", Toast.LENGTH_SHORT).show()
-            }*/
-
             if (validate()){
                 findNavController().navigate(R.id.action_cabanaSizeFragment_to_bathroomSizeFragment)
             }
@@ -46,7 +38,9 @@ class CabanaSizeFragment : Fragment() {
             findNavController().navigateUp()
         }
 
+
         binding.lengthContent.addTextChangedListener { binding.tvErrorLength.visibility = View.GONE }
+        binding.widthContent.addTextChangedListener { binding.tvErrorWidth.visibility = View.GONE }
 
     }
 

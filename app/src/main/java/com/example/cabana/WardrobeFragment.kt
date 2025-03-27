@@ -31,7 +31,12 @@ class WardrobeFragment : Fragment() {
                 findNavController().navigate(R.id.action_wardrobeFragment_to_theWallFragment)
             }
             else{
-                Toast.makeText(context,"Please select an item", Toast.LENGTH_SHORT).show()
+                binding.apply {
+                    slidingLayout.setBackgroundResource(R.drawable.validity_alert_frame)
+                    hingeLayout.setBackgroundResource(R.drawable.validity_alert_frame)
+                    cornerWardrobeLayout.setBackgroundResource(R.drawable.validity_alert_frame)
+                    walkinWardrobeLayout.setBackgroundResource(R.drawable.validity_alert_frame)
+                }
             }
 
         }

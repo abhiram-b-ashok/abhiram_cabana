@@ -31,9 +31,12 @@ class WindowShutterFragment : Fragment() {
             {
                 findNavController().navigate(R.id.action_windowShutterFragment_to_liftersFragment)
             }
-            else
-            {
-                Toast.makeText(context, "Please select a shutter", Toast.LENGTH_SHORT).show()
+            else {
+                binding.apply {
+                    shutterYesLayout.setBackgroundResource(R.drawable.validity_alert_frame)
+                    shutterNoLayout.setBackgroundResource(R.drawable.validity_alert_frame)
+
+                }
             }
 
 

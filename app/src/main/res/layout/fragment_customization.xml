@@ -120,6 +120,15 @@
             android:id="@+id/nameEditText"
             />
         <TextView
+            app:layout_constraintTop_toBottomOf="@id/nameEditText"
+            app:layout_constraintStart_toStartOf="@+id/nameEditText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/invalidName"
+            android:text="Type Name"
+            android:textColor="#F44336"
+            android:visibility="gone"/>
+        <TextView
             android:layout_marginTop="15dp"
             android:id="@+id/locationHeading"
             android:layout_width="wrap_content"
@@ -129,7 +138,7 @@
             android:textColor="@color/white"
             android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/nameEditText"/>
+            app:layout_constraintTop_toBottomOf="@+id/invalidName"/>
         <TextView
             android:id="@+id/locationDescription"
             android:layout_width="match_parent"
@@ -171,6 +180,7 @@
                 android:id="@+id/address"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
+                android:textColor="#9D9B9B"
                 app:layout_constraintStart_toEndOf="@+id/locationicon"
                 app:layout_constraintTop_toBottomOf="@id/locationMap"
                 android:text=" Mirqab Mall \n Al Mirqab Al Jadeed St, Doha,\n Qatar"
