@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
@@ -15,9 +14,6 @@ import com.example.cabana.databinding.FragmentCabanaSizeBinding
 class CabanaSizeFragment : Fragment() {
     private lateinit var binding: FragmentCabanaSizeBinding
     private val args:CabanaSizeFragmentArgs by navArgs()
-//    private var progressBar:ProgressBar = 9
-//    private var progressText:TextView
-//    var i = 0
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -29,8 +25,6 @@ class CabanaSizeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        Toast.makeText(requireContext(),"Hello",Toast.LENGTH_SHORT).show()
 
         binding.apply {
             nextPageButton.setOnClickListener {

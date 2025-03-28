@@ -51,6 +51,8 @@ class TowHookFragment : Fragment() {
             selectHook(2)
             selectedHook = "No"
         }
+        binding.perCentEllipze.progress = 100
+        binding.progressText.text = "100"
     }
 
     private fun selectHook(select: Int) {

@@ -40,7 +40,7 @@ private val args:SubmitSuccessFragmentArgs by navArgs()
             lifterOutput.text = args.lifterType
             bathroomTypeOutput.text = args.bathRoomType
             val conditions = args.conditionTypes.toList()
-            conditionOutput.text = conditions.joinToString { "," }
+            conditionOutput.text = conditions.joinToString()
             outerCoverOutput.text = args.outerCoverType
             waterTankOutput.text = args.waterTankType
             towHookOutput.text = args.hookType

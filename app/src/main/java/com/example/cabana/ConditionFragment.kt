@@ -57,6 +57,8 @@ class ConditionFragment : Fragment() {
         {
             findNavController().navigateUp()
         }
+        binding.perCentEllipze.progress = 76
+        binding.progressText.text = "76"
         val list = arrayListOf(
             ConditionItems("(1)TON"),
             ConditionItems("(1)TON"),

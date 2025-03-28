@@ -50,6 +50,8 @@ class OuterCoverFragment : Fragment() {
             selectCover(2)
             selectedCover = "Fiper"
         }
+        binding.perCentEllipze.progress = 84
+        binding.progressText.text = "84"
 
 
     }

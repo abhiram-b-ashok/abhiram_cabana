@@ -57,6 +57,8 @@ class WindowShutterFragment : Fragment() {
             selectShutter(2)
             selectedShutter = "No"
         }
+        binding.perCentEllipze.progress = 53
+        binding.progressText.text = "53"
 
     }
 

@@ -59,6 +59,8 @@ class BathroomSizeFragment : Fragment() {
             selectedLayout(3)
             selectedSize = "Large"
         }
+        binding.perCentEllipze.progress = 14
+        binding.progressText.text = "14"
     }
 
     private fun selectedLayout(layout:Int) {

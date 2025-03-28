@@ -63,6 +63,8 @@ class BathroomTypeFragment : Fragment() {
             selectBath(2)
             selectedType = "Custom"
         }
+        binding.perCentEllipze.progress = 68
+        binding.progressText.text = "68"
 
     }
 

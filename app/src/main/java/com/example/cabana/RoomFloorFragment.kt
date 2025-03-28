@@ -61,6 +61,8 @@ class RoomFloorFragment : Fragment() {
             selectedFloor(4)
             selectedFloors = "Nothing"
         }
+        binding.perCentEllipze.progress = 23
+        binding.progressText.text = "23"
 
     }
     private fun selectedFloor(floor:Int)

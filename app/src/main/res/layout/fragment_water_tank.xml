@@ -70,14 +70,13 @@
             android:id="@+id/perCentEllipze"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/percentround"
+            android:indeterminateTint="#FFC107"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/cabanaSizeLabel" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="8%"
             android:id="@+id/progressText"
             android:textColor="@color/white"
             app:layout_constraintBottom_toBottomOf="@+id/perCentEllipze"

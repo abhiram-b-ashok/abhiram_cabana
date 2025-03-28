@@ -64,6 +64,8 @@ class WaterTankFragment : Fragment() {
                 }
             }
         }
+        binding.perCentEllipze.progress = 93
+        binding.progressText.text = "93"
 
     }
 

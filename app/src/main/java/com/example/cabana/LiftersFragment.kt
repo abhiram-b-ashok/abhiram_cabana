@@ -52,6 +52,8 @@ class LiftersFragment : Fragment() {
             lifterSelect(2)
             selectedLifter = "All Sides"
         }
+        binding.perCentEllipze.progress = 60
+        binding.progressText.text = "60"
 
     }
 

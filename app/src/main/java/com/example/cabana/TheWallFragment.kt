@@ -55,8 +55,8 @@ class TheWallFragment : Fragment() {
                 selectPaint(3)
                 selectedWall = "Nothing"
             }
-        binding.perCentEllipze.setProgress(100)
-        binding.progressText.setText("100")
+        binding.perCentEllipze.progress = 39
+        binding.progressText.text = "39"
         }
         private fun selectPaint(wall: Int) {
             binding.apply {

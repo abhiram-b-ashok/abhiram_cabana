@@ -73,7 +73,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/cabanaSizeLabel" />
+            android:indeterminateTint="#FFC107"
+            android:max="100"
+            app:layout_constraintTop_toTopOf="@+id/cabanaSizeLabel"
+            />
 
         <TextView
             android:layout_width="wrap_content"

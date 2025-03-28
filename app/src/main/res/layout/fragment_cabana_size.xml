@@ -71,13 +71,13 @@
 
         <ProgressBar
             android:id="@+id/percentage_bar"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/cabanaSizeLabel"
             android:max="100"
-            android:progress="44"
-            android:indeterminateOnly="false"
+            android:indeterminateTint="#FFC107"
+
             />
 
         <TextView

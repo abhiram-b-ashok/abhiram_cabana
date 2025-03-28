@@ -54,6 +54,8 @@ class CustomizationFragment : Fragment() {
         {
             findNavController().navigateUp()
         }
+        binding.perCentEllipze.progress = 100
+        binding.progressText.text = "100"
 
         binding.nameEditText.addTextChangedListener {  binding.invalidName.visibility = View.GONE }
     }

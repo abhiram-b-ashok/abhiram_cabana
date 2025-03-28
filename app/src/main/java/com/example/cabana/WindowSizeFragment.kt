@@ -57,6 +57,8 @@ class WindowSizeFragment : Fragment() {
             selectWindowSize(3)
             selectedSize = "Large"
         }
+        binding.perCentEllipze.progress = 46
+        binding.progressText.text = "46"
     }
 
     private fun selectWindowSize(size: Int) {
