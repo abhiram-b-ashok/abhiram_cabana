@@ -66,8 +66,12 @@ class WardrobeFragment : Fragment() {
             selectWardrobe(4)
             selectedDoor = "Walk in Wardrobe"
         }
-        binding.perCentEllipze.progress = 31
-        binding.progressText.text = "31"
+       progressBar()
+    }
+    private fun progressBar() = binding.apply {
+        val percent = ((4f/14f)*100).toInt()
+        progressBar.progress = percent
+        progressText.text = "$percent%"
     }
 
     private fun selectWardrobe(door: Int) {

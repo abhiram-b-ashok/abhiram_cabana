@@ -64,9 +64,13 @@ class WaterTankFragment : Fragment() {
                 }
             }
         }
-        binding.perCentEllipze.progress = 93
-        binding.progressText.text = "93"
+     progressBar()
 
+    }
+    private fun progressBar() = binding.apply {
+        val percent = ((12f/14f)*100).toInt()
+        progressBar.progress = percent
+        progressText.text = "$percent%"
     }
 
     private fun selectTank(litre: Int) {

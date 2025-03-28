@@ -50,10 +50,14 @@ class OuterCoverFragment : Fragment() {
             selectCover(2)
             selectedCover = "Fiper"
         }
-        binding.perCentEllipze.progress = 84
-        binding.progressText.text = "84"
+        progressBar()
 
 
+    }
+    private fun progressBar() = binding.apply {
+        val percent = ((11f/14f)*100).toInt()
+        progressBar.progress = percent
+        progressText.text = "$percent%"
     }
 
     private fun selectCover(type: Int) {

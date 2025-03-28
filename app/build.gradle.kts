@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
     id("androidx.navigation.safeargs.kotlin")
+    id("com.google.android.libraries.mapsplatform.secrets-gradle-plugin")
 }
 
 android {
@@ -68,5 +69,8 @@ dependencies {
     implementation("androidx.fragment:fragment-ktx:1.8.6")
     implementation("androidx.navigation:navigation-fragment-ktx:2.8.9")
     implementation("androidx.navigation:navigation-ui-ktx:2.8.9")
+    implementation("com.google.android.gms:play-services-maps:19.1.0")
+    implementation ("com.google.android.gms:play-services-location:21.3.0")
+
 
 }

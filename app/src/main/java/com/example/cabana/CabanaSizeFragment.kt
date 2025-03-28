@@ -1,6 +1,7 @@
 package com.example.cabana
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,10 +11,9 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.cabana.databinding.FragmentCabanaSizeBinding
 
-
 class CabanaSizeFragment : Fragment() {
     private lateinit var binding: FragmentCabanaSizeBinding
-    private val args:CabanaSizeFragmentArgs by navArgs()
+    private val args: CabanaSizeFragmentArgs by navArgs()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -28,8 +28,13 @@ class CabanaSizeFragment : Fragment() {
 
         binding.apply {
             nextPageButton.setOnClickListener {
-                if (validate()){
-                    findNavController().navigate(CabanaSizeFragmentDirections.actionCabanaSizeFragmentToBathroomSizeFragment(args.chooseType, binding.lengthContent.text.toString()))
+                if (validate()) {
+                    findNavController().navigate(
+                        CabanaSizeFragmentDirections.actionCabanaSizeFragmentToBathroomSizeFragment(
+                            args.chooseType,
+                            binding.lengthContent.text.toString()
+                        )
+                    )
                 }
             }
             buildBackArrow.setOnClickListener {
@@ -40,24 +45,22 @@ class CabanaSizeFragment : Fragment() {
             setProgressBar()
 
         }
+
     }
 
     private fun setProgressBar() = binding.apply {
-        progressText.text = "8%"
-        percentageBar.apply {
-            max = 100
-            progress = 80
-            isIndeterminate = false
-        }
+        val progress = ((1f / 14f) * 100).toInt()
+        progressText.text = "$progress%"
+        progressBar.progress = progress
     }
 
-    private fun validate():Boolean {
+    private fun validate(): Boolean {
         var isValid = true
-        if(binding.lengthContent.text.isEmpty()){
+        if (binding.lengthContent.text.isEmpty()) {
             isValid = false
             binding.tvErrorLength.visibility = View.VISIBLE
         }
-       if(binding.widthContent.text.isEmpty()){
+        if (binding.widthContent.text.isEmpty()) {
             isValid = false
             binding.tvErrorWidth.visibility = View.VISIBLE
         }

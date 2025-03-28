@@ -57,8 +57,12 @@ class WindowSizeFragment : Fragment() {
             selectWindowSize(3)
             selectedSize = "Large"
         }
-        binding.perCentEllipze.progress = 46
-        binding.progressText.text = "46"
+        progressBar()
+    }
+    private fun progressBar() = binding.apply {
+        val percent = ((6f/14f)*100).toInt()
+        progressBar.progress = percent
+        progressText.text = "$percent%"
     }
 
     private fun selectWindowSize(size: Int) {

@@ -63,11 +63,14 @@ class BathroomTypeFragment : Fragment() {
             selectBath(2)
             selectedType = "Custom"
         }
-        binding.perCentEllipze.progress = 68
-        binding.progressText.text = "68"
 
+        progressBar()
     }
-
+    private fun progressBar() = binding.apply {
+        val percent = ((9f/14f)*100).toInt()
+        progressBar.progress = percent
+        progressText.text = "$percent%"
+    }
     private fun selectBath(type: Int) {
         binding.apply {
             bathroomStandardLayout.setBackgroundResource(if (type == 1) R.drawable.size_card_layout_background else R.drawable.curve_for_corners)
@@ -76,4 +79,8 @@ class BathroomTypeFragment : Fragment() {
             bathroomCustomRadio.setImageResource(if (type == 2) R.drawable.baseline_check_circle_24 else R.drawable.checkboxstyle)
         }
     }
-}
+    }
+
+
+
+

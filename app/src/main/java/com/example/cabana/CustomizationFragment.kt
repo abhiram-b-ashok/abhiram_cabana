@@ -11,7 +11,8 @@ import androidx.navigation.fragment.navArgs
 import com.example.cabana.databinding.FragmentCustomizationBinding
 
 
-class CustomizationFragment : Fragment() {
+
+class CustomizationFragment : Fragment(){
     private lateinit var binding: FragmentCustomizationBinding
     private val args: CustomizationFragmentArgs by navArgs()
 
@@ -21,10 +22,13 @@ class CustomizationFragment : Fragment() {
     ): View {
         binding = FragmentCustomizationBinding.inflate(inflater, container, false)
         return binding.root
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+
         binding.nextPageButton.setOnClickListener()
         {
             if (nameValidation()) {
@@ -54,10 +58,15 @@ class CustomizationFragment : Fragment() {
         {
             findNavController().navigateUp()
         }
-        binding.perCentEllipze.progress = 100
-        binding.progressText.text = "100"
+       progressBar()
 
         binding.nameEditText.addTextChangedListener {  binding.invalidName.visibility = View.GONE }
+
+    }
+    private fun progressBar() = binding.apply {
+        val percent = ((14f / 14f) * 100).toInt()
+        progressBar.progress = percent
+        progressText.text = "$percent"
     }
 
     private fun nameValidation(): Boolean {
@@ -68,4 +77,5 @@ class CustomizationFragment : Fragment() {
         }
         return isValid
     }
+
 }

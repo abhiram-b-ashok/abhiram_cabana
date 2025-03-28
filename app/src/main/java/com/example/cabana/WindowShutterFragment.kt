@@ -57,9 +57,13 @@ class WindowShutterFragment : Fragment() {
             selectShutter(2)
             selectedShutter = "No"
         }
-        binding.perCentEllipze.progress = 53
-        binding.progressText.text = "53"
+        progressBar()
 
+    }
+    private fun progressBar() = binding.apply {
+        val percent = ((7f/14f)*100).toInt()
+        progressBar.progress = percent
+        progressText.text = "$percent%"
     }
 
     private fun selectShutter(select: Int) {

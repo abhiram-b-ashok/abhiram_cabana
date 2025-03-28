@@ -61,9 +61,13 @@ class RoomFloorFragment : Fragment() {
             selectedFloor(4)
             selectedFloors = "Nothing"
         }
-        binding.perCentEllipze.progress = 23
-        binding.progressText.text = "23"
 
+        progressBar()
+    }
+    private fun progressBar() = binding.apply {
+        val percent = ((3f/14f)*100).toInt()
+        progressBar.progress = percent
+        progressText.text = "$percent%"
     }
     private fun selectedFloor(floor:Int)
     {

@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <style name="Theme.Cabana" parent="Theme.MaterialComponents.DayNight.NoActionBar" />
+    
+    <style name="CircularProgressBar">
+        <item name="android:indeterminateOnly">false </item>
+        <item name="android:progressDrawable">@drawable/circular_progress_bar_background</item>
+    </style>
+    
 </resources>

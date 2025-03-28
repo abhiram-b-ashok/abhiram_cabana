@@ -59,8 +59,12 @@ class BathroomSizeFragment : Fragment() {
             selectedLayout(3)
             selectedSize = "Large"
         }
-        binding.perCentEllipze.progress = 14
-        binding.progressText.text = "14"
+        progressBar()
+    }
+    private fun progressBar() = binding.apply {
+        val percent = ((2f/14f)*100).toInt()
+        progressBar.progress = percent
+        progressText.text = "$percent%"
     }
 
     private fun selectedLayout(layout:Int) {

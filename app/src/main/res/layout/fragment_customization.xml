@@ -46,9 +46,9 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="50dp"
             android:fontFamily="sans-serif-medium"
-            android:text="NAME OF CUSTOMIZATION"
+            android:text="CUSTOMIZATION"
             android:textColor="@color/white"
-            android:textSize="20sp"
+            android:textSize="22sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/cabanSizeHeader" />
@@ -60,7 +60,7 @@
             android:fontFamily="sans-serif-medium"
             android:text="Step 13/13"
             android:textColor="#78BFA0"
-            android:textSize="18sp"
+            android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/cabanaSizeLabel"
@@ -68,11 +68,13 @@
             />
 
         <ProgressBar
-            android:id="@+id/perCentEllipze"
+            android:id="@+id/progressBar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:indeterminateTint="#FFC107"
+            android:progressDrawable="@drawable/circular_progress_bar_background"
             app:layout_constraintEnd_toEndOf="parent"
+            android:max="100"
+            android:indeterminateOnly="false"
             app:layout_constraintTop_toTopOf="@+id/cabanaSizeLabel" />
 
         <TextView
@@ -80,10 +82,10 @@
             android:layout_height="wrap_content"
             android:id="@+id/progressText"
             android:textColor="@color/white"
-            app:layout_constraintBottom_toBottomOf="@+id/perCentEllipze"
-            app:layout_constraintEnd_toEndOf="@+id/perCentEllipze"
-            app:layout_constraintStart_toStartOf="@+id/perCentEllipze"
-            app:layout_constraintTop_toTopOf="@+id/perCentEllipze" />
+            app:layout_constraintBottom_toBottomOf="@+id/progressBar"
+            app:layout_constraintEnd_toEndOf="@+id/progressBar"
+            app:layout_constraintStart_toStartOf="@+id/progressBar"
+            app:layout_constraintTop_toTopOf="@+id/progressBar" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -154,12 +156,19 @@
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginTop="10dp"
             >
+<!--            <androidx.fragment.app.FragmentContainerView-->
+<!--                android:id="@+id/map"-->
+<!--                app:layout_constraintTop_toTopOf="parent"-->
+<!--                android:name="com.google.android.gms.maps.SupportMapFragment"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="200dp" />-->
             <ImageView
                 android:layout_width="0dp"
                 android:layout_height="200dp"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                android:id="@+id/locationMap"
+                android:id="@+id/map"
                 android:src="@drawable/worldmap"
                 android:scaleType="fitXY"
                 android:padding="5dp"
@@ -182,7 +191,7 @@
                 android:layout_marginTop="10dp"
                 android:textColor="#9D9B9B"
                 app:layout_constraintStart_toEndOf="@+id/locationicon"
-                app:layout_constraintTop_toBottomOf="@id/locationMap"
+                app:layout_constraintTop_toBottomOf="@id/map"
                 android:text=" Mirqab Mall \n Al Mirqab Al Jadeed St, Doha,\n Qatar"
                 />
             <ImageView

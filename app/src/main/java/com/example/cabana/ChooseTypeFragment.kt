@@ -15,7 +15,7 @@ import com.example.cabana.databinding.FragmentChooseTypeBinding
 
 class ChooseTypeFragment : Fragment() {
     private lateinit var binding: FragmentChooseTypeBinding
-    private var selectedCard :String? =null
+    private var selectedCard: String? = null
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -27,13 +27,17 @@ class ChooseTypeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.viewCabanaButton.setOnClickListener() {
-            if (selectedCard!=null)
-            findNavController().navigate(ChooseTypeFragmentDirections.actionChooseTypeFragmentToCabanaSizeFragment(selectedCard.toString()))
+            if (selectedCard != null)
+                findNavController().navigate(
+                    ChooseTypeFragmentDirections.actionChooseTypeFragmentToCabanaSizeFragment(
+                        selectedCard.toString()
+                    )
+                )
             else {
                 binding.apply {
                     standardLayout.setBackgroundResource(R.drawable.validity_alert_frame)
                     customLayout.setBackgroundResource(R.drawable.validity_alert_frame)
-            }
+                }
             }
 
         }
@@ -53,6 +57,7 @@ class ChooseTypeFragment : Fragment() {
         }
 
     }
+
     private fun switchButton(sCard: Int) {
         binding.apply {
             standardRadio.setImageResource(if (sCard == 1) R.drawable.baseline_check_circle_24 else R.drawable.checkboxstyle)

@@ -26,10 +26,26 @@ class TowHookFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding.nextPageButton.setOnClickListener()
         {
-            if (selectedHook!=null) {
-                findNavController().navigate(TowHookFragmentDirections.actionTowHookFragmentToCustomizationFragment(args.chooseType,args.cabanSize,args.bathroomSize,args.floorType, args.wardrobeType,args.wallType,args.windowSize,args.shutter,args.lifterType,args.bathRoomType,args.conditionTypes,args.outerCoverType,args.waterTankType,selectedHook.toString()))
-            }
-            else {
+            if (selectedHook != null) {
+                findNavController().navigate(
+                    TowHookFragmentDirections.actionTowHookFragmentToCustomizationFragment(
+                        args.chooseType,
+                        args.cabanSize,
+                        args.bathroomSize,
+                        args.floorType,
+                        args.wardrobeType,
+                        args.wallType,
+                        args.windowSize,
+                        args.shutter,
+                        args.lifterType,
+                        args.bathRoomType,
+                        args.conditionTypes,
+                        args.outerCoverType,
+                        args.waterTankType,
+                        selectedHook.toString()
+                    )
+                )
+            } else {
                 binding.apply {
                     hookYesLayout.setBackgroundResource(R.drawable.validity_alert_frame)
                     hookNoLayout.setBackgroundResource(R.drawable.validity_alert_frame)
@@ -51,8 +67,13 @@ class TowHookFragment : Fragment() {
             selectHook(2)
             selectedHook = "No"
         }
-        binding.perCentEllipze.progress = 100
-        binding.progressText.text = "100"
+        progressBar()
+    }
+
+    private fun progressBar() = binding.apply {
+        val percent = ((13f / 14f) * 100).toInt()
+        progressBar.progress = percent
+        progressText.text = "$percent%"
     }
 
     private fun selectHook(select: Int) {

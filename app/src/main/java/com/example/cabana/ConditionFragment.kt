@@ -57,8 +57,7 @@ class ConditionFragment : Fragment() {
         {
             findNavController().navigateUp()
         }
-        binding.perCentEllipze.progress = 76
-        binding.progressText.text = "76"
+
         val list = arrayListOf(
             ConditionItems("(1)TON"),
             ConditionItems("(1)TON"),
@@ -86,7 +85,13 @@ class ConditionFragment : Fragment() {
         binding.conditionRecyclers.adapter = adapter
         binding.conditionRecyclers.layoutManager = GridLayoutManager(requireContext(), 2)
 
+        progressBar()
+    }
 
+    private fun progressBar() = binding.apply {
+        val percent = ((10f / 14f) * 100).toInt()
+        progressBar.progress = percent
+        progressText.text = "$percent%"
     }
 }
 

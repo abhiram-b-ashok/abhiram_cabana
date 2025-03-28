@@ -52,9 +52,13 @@ class LiftersFragment : Fragment() {
             lifterSelect(2)
             selectedLifter = "All Sides"
         }
-        binding.perCentEllipze.progress = 60
-        binding.progressText.text = "60"
+       progressBar()
 
+    }
+    private fun progressBar() = binding.apply {
+        val percent = ((8f/14f)*100).toInt()
+        progressBar.progress = percent
+        progressText.text = "$percent%"
     }
 
     private fun lifterSelect(type: Int) {

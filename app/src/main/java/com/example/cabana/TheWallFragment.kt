@@ -55,9 +55,13 @@ class TheWallFragment : Fragment() {
                 selectPaint(3)
                 selectedWall = "Nothing"
             }
-        binding.perCentEllipze.progress = 39
-        binding.progressText.text = "39"
+       progressBar()
         }
+    private fun progressBar() = binding.apply {
+        val percent = ((5f/14f)*100).toInt()
+        progressBar.progress = percent
+        progressText.text = "$percent%"
+    }
         private fun selectPaint(wall: Int) {
             binding.apply {
                 wallpaperLayout.setBackgroundResource(if (wall == 1) R.drawable.size_card_layout_background else R.drawable.curve_for_corners)
